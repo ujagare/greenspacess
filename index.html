@@ -99,6 +99,183 @@
         transform: translate(150%, -150%);
       }
 
+      /* Modern Card-Style Dropdown for Projects */
+      .projects-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        padding: 24px;
+        margin-top: 12px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        min-width: 600px;
+        max-width: 650px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      /* Prevent dropdown from going off-screen on right */
+      .nav-item.dropdown {
+        position: relative;
+      }
+
+      @media (min-width: 992px) {
+        .projects-dropdown {
+          left: auto;
+          right: -100px;
+          transform: none;
+        }
+      }
+
+      .nav-item.dropdown:hover .projects-dropdown {
+        opacity: 1;
+        visibility: visible;
+        margin-top: 8px;
+      }
+
+      .projects-dropdown-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .project-card {
+        display: flex;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        background: #f8f9fa;
+        border: 1px solid transparent;
+      }
+
+      .project-card:hover {
+        background: #fff;
+        border-color: #28a745;
+        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .project-card-image {
+        width: 120px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .project-card-content {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .project-card-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #0f4229;
+        margin: 0 0 4px 0;
+        line-height: 1.3;
+      }
+
+      .project-card-description {
+        font-size: 13px;
+        color: #666;
+        margin: 0;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .project-card-badge {
+        display: inline-block;
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 12px;
+        background: #28a745;
+        color: white;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+
+      /* Hide default Bootstrap dropdown */
+      .nav-item.dropdown .dropdown-menu {
+        display: none !important;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .projects-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-width: 400px;
+          min-width: auto;
+          padding: 16px;
+          margin: 0;
+          border-radius: 8px;
+          max-height: 70vh;
+          overflow-y: auto;
+          transition: none !important;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Toggle functionality */
+        .nav-item.dropdown.active .projects-dropdown {
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: block !important;
+        }
+
+        .nav-item.dropdown:not(.active) .projects-dropdown {
+          opacity: 0 !important;
+          visibility: hidden !important;
+          display: none !important;
+        }
+
+        .projects-dropdown-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        /* Smaller cards for mobile */
+        .project-card {
+          padding: 8px;
+          gap: 8px;
+        }
+
+        .project-card-image {
+          width: 70px;
+          height: 55px;
+        }
+
+        .project-card-title {
+          font-size: 13px;
+          margin-bottom: 2px;
+        }
+
+        .project-card-description {
+          font-size: 11px;
+          line-height: 1.3;
+          -webkit-line-clamp: 2;
+        }
+
+        .project-card-badge {
+          font-size: 8px;
+          padding: 2px 6px;
+          margin-top: 3px;
+        }
+      }
+
       .button:hover .button__icon-svg--copy {
         transition: transform 0.3s ease-in-out 0.1s;
         transform: translate(0);
@@ -151,8 +328,78 @@
           <a href="index.html" class="nav-item nav-link active">Home</a>
           <a href="about.html" class="nav-item nav-link">About</a>
           <a href="service.html" class="nav-item nav-link">Services</a>
-          <a href="project.html" class="nav-item nav-link">Projects</a>
+          <div class="nav-item dropdown">
+            <a href="project.html" class="nav-link dropdown-toggle">Projects</a>
+            <!-- Modern Card-Style Dropdown -->
+            <div class="projects-dropdown">
+              <div class="projects-dropdown-grid">
+                <!-- Purandhar Project Card -->
+                <a href="purandhar.html" class="project-card">
+                  <img
+                    src="img/purnadar/purnadarhero.png"
+                    alt="Purandhar"
+                    class="project-card-image"
+                  />
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Purandhar Project</h4>
+                    <p class="project-card-description">
+                      Premium agriculture land with clear title near Pune Ring
+                      Road
+                    </p>
+                    <span class="project-card-badge">Featured</span>
+                  </div>
+                </a>
 
+                <!-- Khed Project Card -->
+                <a href="khed.html" class="project-card">
+                  <img
+                    src="img/khed/Serene valley with winding river.png"
+                    alt="Khed"
+                    class="project-card-image"
+                  />
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Khed Project</h4>
+                    <p class="project-card-description">
+                      Lake touch farmhouse plots with scenic valley views
+                    </p>
+                    <span class="project-card-badge">Premium</span>
+                  </div>
+                </a>
+
+                <!-- Konkan Project Card -->
+                <a href="kokan.html" class="project-card">
+                  <img
+                    src="img/konkan/costal.png"
+                    alt="Konkan"
+                    class="project-card-image"
+                  />
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Konkan Project</h4>
+                    <p class="project-card-description">
+                      Coastal land on Mumbai-Goa Highway in tourism belt
+                    </p>
+                    <span class="project-card-badge">New Launch</span>
+                  </div>
+                </a>
+
+                <!-- Mulshi Project Card -->
+                <a href="mulshi.html" class="project-card">
+                  <img
+                    src="img/Mulshi/Mulshi-Lake-and-Dam-4.webp"
+                    alt="Mulshi"
+                    class="project-card-image"
+                  />
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Mulshi Project</h4>
+                    <p class="project-card-description">
+                      Lake touch land near Mulshi Dam with mountain views
+                    </p>
+                    <span class="project-card-badge">Hot Deal</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
           <a href="contact.html" class="nav-item nav-link">Contact</a>
         </div>
       </div>
@@ -812,7 +1059,7 @@
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="service-item rounded d-flex h-100">
               <div class="service-img rounded">
-                <img class="img-fluid" src="img/service-6.jpg" alt="" />
+                <img class="img-fluid" src="img/land-plot.jpg" alt="" />
               </div>
               <div class="service-text rounded p-5">
                 <div class="btn-square rounded-circle mx-auto mb-3">
@@ -978,11 +1225,15 @@
             class="col-lg-6 col-md-6 portfolio-item khed wow fadeInUp"
             data-wow-delay="0.3s"
             style="cursor: pointer"
-            onclick="window.location.href='contact.html'"
+            onclick="window.location.href='khed.html'"
           >
             <div class="property-card">
               <div class="card-image-wrapper">
-                <img class="img-fluid" src="img/service-2.jpg" alt="" />
+                <img
+                  class="img-fluid"
+                  src="img/khed/Serene valley with winding river.png"
+                  alt=""
+                />
                 <div class="card-badge badge-premium">Premium</div>
               </div>
               <div class="card-body">
@@ -997,7 +1248,7 @@
                 </div>
                 <button
                   class="btn-visit"
-                  onclick="event.stopPropagation(); window.location.href='contact.html'"
+                  onclick="event.stopPropagation(); window.location.href='khed.html'"
                 >
                   <i class="fa fa-calendar-alt"></i> Book Site Visit
                 </button>
@@ -1008,11 +1259,11 @@
             class="col-lg-6 col-md-6 portfolio-item kokan wow fadeInUp"
             data-wow-delay="0.5s"
             style="cursor: pointer"
-            onclick="window.location.href='contact.html'"
+            onclick="window.location.href='kokan.html'"
           >
             <div class="property-card">
               <div class="card-image-wrapper">
-                <img class="img-fluid" src="img/service-3.jpg" alt="" />
+                <img class="img-fluid" src="img/konkan/costal.png" alt="" />
                 <div class="card-badge badge-new">New Launch</div>
               </div>
               <div class="card-body">
@@ -1027,7 +1278,7 @@
                 </div>
                 <button
                   class="btn-visit"
-                  onclick="event.stopPropagation(); window.location.href='contact.html'"
+                  onclick="event.stopPropagation(); window.location.href='kokan.html'"
                 >
                   <i class="fa fa-calendar-alt"></i> Book Site Visit
                 </button>
@@ -1038,11 +1289,15 @@
             class="col-lg-6 col-md-6 portfolio-item mulshi wow fadeInUp"
             data-wow-delay="0.7s"
             style="cursor: pointer"
-            onclick="window.location.href='contact.html'"
+            onclick="window.location.href='mulshi.html'"
           >
             <div class="property-card">
               <div class="card-image-wrapper">
-                <img class="img-fluid" src="img/service-4.jpg" alt="" />
+                <img
+                  class="img-fluid"
+                  src="img/Mulshi/Mulshi-Lake-and-Dam-4.webp"
+                  alt=""
+                />
                 <div class="card-badge">Hot Deal</div>
               </div>
               <div class="card-body">
@@ -1057,7 +1312,7 @@
                 </div>
                 <button
                   class="btn-visit"
-                  onclick="event.stopPropagation(); window.location.href='contact.html'"
+                  onclick="event.stopPropagation(); window.location.href='mulshi.html'"
                 >
                   <i class="fa fa-calendar-alt"></i> Book Site Visit
                 </button>
@@ -1075,147 +1330,404 @@
         <div
           class="text-center mx-auto wow fadeInUp"
           data-wow-delay="0.1s"
-          style="max-width: 500px"
+          style="max-width: 600px"
         >
           <p class="fs-5 fw-bold text-primary">Our Team</p>
-          <h1 class="display-5 mb-5">Dedicated & Experienced Team Members</h1>
+          <h1 class="display-5 mb-5">Meet Our Team</h1>
+          <p>
+            Dedicated professionals committed to your land investment success
+          </p>
         </div>
-        <div class="row g-4">
+
+        <div class="row g-4 justify-content-center">
+          <!-- Team Member 1 -->
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="team-item rounded">
-              <img class="img-fluid" src="img/team-1.jpg" alt="" />
-              <div class="team-text">
-                <h4 class="mb-0">Doris Jordan</h4>
-                <p class="text-primary">Landscape Designer</p>
-                <div class="team-social d-flex">
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+            <div
+              class="team-card bg-white border rounded-3 p-4 h-100"
+              style="transition: all 0.3s ease"
+            >
+              <div
+                class="team-image mb-3"
+                style="
+                  height: 250px;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  background: #e9ecef;
+                "
+              >
+                <img
+                  class="img-fluid w-100 h-100"
+                  style="object-fit: cover"
+                  src="img/testo1.png"
+                  alt="Rajesh Kumar"
+                />
+              </div>
+              <div class="team-content text-center">
+                <h4 class="mb-2" style="color: #0f4229; font-weight: bold">
+                  Rajesh Kumar
+                </h4>
+                <p
+                  class="text-primary fw-semibold mb-3"
+                  style="font-size: 0.95rem"
+                >
+                  Founder & CEO
+                </p>
+                <p
+                  class="text-muted mb-3"
+                  style="font-size: 0.9rem; line-height: 1.6"
+                >
+                  With over 15 years of experience in real estate and
+                  agriculture land development, Rajesh leads our team with
+                  vision and expertise.
+                </p>
+                <div class="team-social d-flex justify-content-center gap-2">
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="mailto:rajesh@greenspacess.com"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fas fa-envelope" style="color: #0f4229"></i>
+                  </a>
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="tel:+917972258038"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fas fa-phone" style="color: #0f4229"></i>
+                  </a>
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="#"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fab fa-linkedin-in" style="color: #0f4229"></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Team Member 2 -->
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="team-item rounded">
-              <img class="img-fluid" src="img/team-2.jpg" alt="" />
-              <div class="team-text">
-                <h4 class="mb-0">Johnny Ramirez</h4>
-                <p class="text-primary">Garden Designer</p>
-                <div class="team-social d-flex">
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+            <div
+              class="team-card bg-white border rounded-3 p-4 h-100"
+              style="transition: all 0.3s ease"
+            >
+              <div
+                class="team-image mb-3"
+                style="
+                  height: 250px;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  background: #e9ecef;
+                "
+              >
+                <img
+                  class="img-fluid w-100 h-100"
+                  style="object-fit: cover"
+                  src="img/testo2.png"
+                  alt="Priya Sharma"
+                />
+              </div>
+              <div class="team-content text-center">
+                <h4 class="mb-2" style="color: #0f4229; font-weight: bold">
+                  Priya Sharma
+                </h4>
+                <p
+                  class="text-primary fw-semibold mb-3"
+                  style="font-size: 0.95rem"
+                >
+                  Legal & Documentation Head
+                </p>
+                <p
+                  class="text-muted mb-3"
+                  style="font-size: 0.9rem; line-height: 1.6"
+                >
+                  Priya ensures all our land transactions are legally verified
+                  and transparent. Her expertise guarantees clear title and
+                  hassle-free documentation.
+                </p>
+                <div class="team-social d-flex justify-content-center gap-2">
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="mailto:priya@greenspacess.com"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fas fa-envelope" style="color: #0f4229"></i>
+                  </a>
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="tel:+917666090107"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fas fa-phone" style="color: #0f4229"></i>
+                  </a>
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="#"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fab fa-linkedin-in" style="color: #0f4229"></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Team Member 3 -->
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="team-item rounded">
-              <img class="img-fluid" src="img/team-3.jpg" alt="" />
-              <div class="team-text">
-                <h4 class="mb-0">Diana Wagner</h4>
-                <p class="text-primary">Senior Gardener</p>
-                <div class="team-social d-flex">
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square rounded-circle me-2" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+            <div
+              class="team-card bg-white border rounded-3 p-4 h-100"
+              style="transition: all 0.3s ease"
+            >
+              <div
+                class="team-image mb-3"
+                style="
+                  height: 250px;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  background: #e9ecef;
+                "
+              >
+                <img
+                  class="img-fluid w-100 h-100"
+                  style="object-fit: cover"
+                  src="img/testo3.png"
+                  alt="Amit Deshmukh"
+                />
+              </div>
+              <div class="team-content text-center">
+                <h4 class="mb-2" style="color: #0f4229; font-weight: bold">
+                  Amit Deshmukh
+                </h4>
+                <p
+                  class="text-primary fw-semibold mb-3"
+                  style="font-size: 0.95rem"
+                >
+                  Project Development Manager
+                </p>
+                <p
+                  class="text-muted mb-3"
+                  style="font-size: 0.9rem; line-height: 1.6"
+                >
+                  Amit oversees all our land development projects, ensuring
+                  quality infrastructure and timely delivery. His agricultural
+                  expertise helps clients maximize potential.
+                </p>
+                <div class="team-social d-flex justify-content-center gap-2">
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="mailto:amit@greenspacess.com"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fas fa-envelope" style="color: #0f4229"></i>
+                  </a>
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="tel:+917972258038"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fas fa-phone" style="color: #0f4229"></i>
+                  </a>
+                  <a
+                    class="btn btn-square rounded-2"
+                    href="#"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      background: #f0f0f0;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fab fa-linkedin-in" style="color: #0f4229"></i>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <style>
+          .team-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+            transform: translateY(-5px);
+          }
+          .team-social a:hover {
+            background: #348e38 !important;
+          }
+          .team-social a:hover i {
+            color: white !important;
+          }
+        </style>
       </div>
     </div>
     <!-- Team End -->
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
+    <div
+      class="container-xxl py-5"
+      style="
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+          url(&quot;img/green background.jpg&quot;) center/cover;
+      "
+    >
       <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
-            <p class="fs-5 fw-bold text-primary">Testimonial</p>
-            <h1 class="display-5 mb-5">
-              <img src="img/Bird PNG.png" alt="" class="heading-bird" />What Our
-              Clients Say About Us!
-            </h1>
-            <p class="mb-4">
-              Our clients' satisfaction is our greatest achievement. Here's what
-              some of our happy landowners have to say about their experience
-              with
-              <img
-                src="img/LOGO/GreenSpacess_Typo.png"
-                alt="GREENSPACESS"
-                class="brand-typo"
-              />.
-            </p>
-            <a class="btn btn-primary py-3 px-4" href="contact.html"
-              >See More</a
-            >
-          </div>
-          <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 700px"
+        >
+          <p class="fs-5 fw-bold text-primary">Testimonial</p>
+          <h1 class="display-5 mb-3">
+            <img src="img/Bird PNG.png" alt="" class="heading-bird" />What Our
+            Clients Say About Us!
+          </h1>
+          <p class="text-muted">
+            Our clients' satisfaction is our greatest achievement. Here's what
+            some of our happy landowners have to say about their experience with
+            <img
+              src="img/LOGO/GreenSpacess_Typo.png"
+              alt="GREENSPACESS"
+              class="brand-typo"
+            />.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-10">
             <div class="owl-carousel testimonial-carousel">
-              <div class="testimonial-item">
-                <img
-                  class="img-fluid rounded mb-3"
-                  src="img/testimonial-1.jpg"
-                  alt=""
-                />
-                <p class="fs-5">
+              <div class="testimonial-item bg-white p-5 rounded-3 shadow-sm">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="rounded-circle bg-primary d-flex align-items-center justify-content-center"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fas fa-quote-left text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div class="ms-3">
+                    <h4 class="mb-1">Rajesh Patil</h4>
+                    <span class="text-primary fw-semibold"
+                      >Business Owner, Pune</span
+                    >
+                  </div>
+                </div>
+                <p class="fs-5 text-muted mb-0" style="line-height: 1.8">
                   "I purchased 2 acres of agriculture land from GREENSPACESS at
                   Parinche. The entire process was transparent and hassle-free.
                   All legal documents were verified and the team guided me at
                   every step. Highly recommended for genuine land buyers!"
                 </p>
-                <h4>Rajesh Patil</h4>
-                <span>Business Owner, Pune</span>
               </div>
-              <div class="testimonial-item">
-                <img
-                  class="img-fluid rounded mb-3"
-                  src="img/testimonial-2.jpg"
-                  alt=""
-                />
-                <p class="fs-5">
+
+              <div class="testimonial-item bg-white p-5 rounded-3 shadow-sm">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="rounded-circle bg-primary d-flex align-items-center justify-content-center"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fas fa-quote-left text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div class="ms-3">
+                    <h4 class="mb-1">Priya Sharma</h4>
+                    <span class="text-primary fw-semibold"
+                      >IT Professional, Mumbai</span
+                    >
+                  </div>
+                </div>
+                <p class="fs-5 text-muted mb-0" style="line-height: 1.8">
                   "Best decision to invest in farmhouse plot at Koliye through
                   GREENSPACESS. The lake-touch property is exactly as promised.
                   Clear title, proper documentation, and excellent location. The
                   team's professionalism is commendable."
                 </p>
-                <h4>Priya Sharma</h4>
-                <span>IT Professional, Mumbai</span>
               </div>
-              <div class="testimonial-item">
-                <img
-                  class="img-fluid rounded mb-3"
-                  src="img/testimonial-1.jpg"
-                  alt=""
-                />
-                <p class="fs-5">
+
+              <div class="testimonial-item bg-white p-5 rounded-3 shadow-sm">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="flex-shrink-0">
+                    <div
+                      class="rounded-circle bg-primary d-flex align-items-center justify-content-center"
+                      style="width: 60px; height: 60px"
+                    >
+                      <i class="fas fa-quote-left text-white fs-4"></i>
+                    </div>
+                  </div>
+                  <div class="ms-3">
+                    <h4 class="mb-1">Amit Deshmukh</h4>
+                    <span class="text-primary fw-semibold"
+                      >Entrepreneur, Pune</span
+                    >
+                  </div>
+                </div>
+                <p class="fs-5 text-muted mb-0" style="line-height: 1.8">
                   "GREENSPACESS helped me fulfill my dream of owning agriculture
                   land. The plot I bought has excellent connectivity and fertile
                   soil. Their after-sales support is outstanding. Thank you for
                   making this journey smooth!"
                 </p>
-                <h4>Amit Deshmukh</h4>
-                <span>Entrepreneur, Pune</span>
               </div>
             </div>
           </div>
@@ -1340,5 +1852,8 @@
 
     <!-- Lazy Loading Script -->
     <script src="js/lazy-load.js"></script>
+
+    <!-- Dropdown Toggle Script -->
+    <script src="js/dropdown.js"></script>
   </body>
 </html>

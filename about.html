@@ -36,10 +36,223 @@
         vertical-align: middle;
         display: inline-block;
       }
+
+      /* Modern Card-Style Dropdown for Projects */
+      .projects-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        padding: 24px;
+        margin-top: 12px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        min-width: 600px;
+        max-width: 650px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-item.dropdown {
+        position: relative;
+      }
+
+      @media (min-width: 992px) {
+        .projects-dropdown {
+          left: auto;
+          right: -100px;
+          transform: none;
+        }
+      }
+
+      .nav-item.dropdown:hover .projects-dropdown {
+        opacity: 1;
+        visibility: visible;
+        margin-top: 8px;
+      }
+
+      .projects-dropdown-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .project-card {
+        display: flex;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        background: #f8f9fa;
+        border: 1px solid transparent;
+      }
+
+      .project-card:hover {
+        background: #fff;
+        border-color: #28a745;
+        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .project-card-image {
+        width: 120px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .project-card-content {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .project-card-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #0f4229;
+        margin: 0 0 4px 0;
+        line-height: 1.3;
+      }
+
+      .project-card-description {
+        font-size: 13px;
+        color: #666;
+        margin: 0;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .project-card-badge {
+        display: inline-block;
+        font-size: 10px;
+        padding: 2px 8px;
+        border-radius: 12px;
+        background: #28a745;
+        color: white;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+
+      .nav-item.dropdown .dropdown-menu {
+        display: none !important;
+      }
+
+      @media (max-width: 768px) {
+        .projects-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-width: 400px;
+          min-width: auto;
+          padding: 16px;
+          margin: 0;
+          border-radius: 8px;
+          max-height: 70vh;
+          overflow-y: auto;
+          transition: none !important;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Toggle functionality */
+        .nav-item.dropdown.active .projects-dropdown {
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: block !important;
+        }
+        
+        .nav-item.dropdown:not(.active) .projects-dropdown {
+          opacity: 0 !important;
+          visibility: hidden !important;
+          display: none !important;
+        }
+        
+        .projects-dropdown-grid {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        
+        /* Smaller cards for mobile */
+        .project-card {
+          padding: 8px;
+          gap: 8px;
+        }
+        
+        .project-card-image {
+          width: 70px;
+          height: 55px;
+        }
+        
+        .project-card-title {
+          font-size: 13px;
+          margin-bottom: 2px;
+        }
+        
+        .project-card-description {
+          font-size: 11px;
+          line-height: 1.3;
+          -webkit-line-clamp: 2;
+        }
+        
+        .project-card-badge {
+          font-size: 8px;
+          padding: 2px 6px;
+          margin-top: 3px;
+        }
+      }
+
+      /* Mobile Back Arrow */
+      .mobile-back-arrow {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 1000;
+        width: 45px;
+        height: 45px;
+        background: rgba(40, 167, 69, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .mobile-back-arrow:hover {
+        background: rgba(33, 136, 56, 1);
+        transform: scale(1.15);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .mobile-back-arrow i {
+        color: white;
+        font-size: 22px;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-back-arrow {
+          display: flex !important;
+        }
+      }
     </style>
 </head>
 
 <body>
+    
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
@@ -72,8 +285,45 @@
           <a href="index.html" class="nav-item nav-link">Home</a>
           <a href="about.html" class="nav-item nav-link active">About</a>
           <a href="service.html" class="nav-item nav-link">Services</a>
-          <a href="project.html" class="nav-item nav-link">Projects</a>
-     
+          <div class="nav-item dropdown">
+            <a href="project.html" class="nav-link dropdown-toggle">Projects</a>
+            <div class="projects-dropdown">
+              <div class="projects-dropdown-grid">
+                <a href="purandhar.html" class="project-card">
+                  <img src="img/purnadar/purnadarhero.png" alt="Purandhar" class="project-card-image">
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Purandhar Project</h4>
+                    <p class="project-card-description">Premium agriculture land with clear title near Pune Ring Road</p>
+                    <span class="project-card-badge">Featured</span>
+                  </div>
+                </a>
+                <a href="khed.html" class="project-card">
+                  <img src="img/khed/Serene valley with winding river.png" alt="Khed" class="project-card-image">
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Khed Project</h4>
+                    <p class="project-card-description">Lake touch farmhouse plots with scenic valley views</p>
+                    <span class="project-card-badge">Premium</span>
+                  </div>
+                </a>
+                <a href="kokan.html" class="project-card">
+                  <img src="img/konkan/costal.png" alt="Konkan" class="project-card-image">
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Konkan Project</h4>
+                    <p class="project-card-description">Coastal land on Mumbai-Goa Highway in tourism belt</p>
+                    <span class="project-card-badge">New Launch</span>
+                  </div>
+                </a>
+                <a href="mulshi.html" class="project-card">
+                  <img src="img/Mulshi/Mulshi-Lake-and-Dam-4.webp" alt="Mulshi" class="project-card-image">
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Mulshi Project</h4>
+                    <p class="project-card-description">Lake touch land near Mulshi Dam with mountain views</p>
+                    <span class="project-card-badge">Hot Deal</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
           <a href="contact.html" class="nav-item nav-link">Contact</a>
         </div>
       </div>
@@ -82,7 +332,12 @@
 
 
     <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="position: relative;">
+        <!-- Mobile Back Arrow -->
+        <a href="javascript:history.back()" class="mobile-back-arrow" title="Go Back">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        
         <div class="container text-center py-5">
             <h1 class="display-3 text-white mb-4 animated slideInDown">About Us</h1>
            
@@ -219,7 +474,7 @@
                     <span class="fs-5 fw-semi-bold text-light">Acres Developed</span>
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                    <h1 class="display-4 text-white" data-toggle="counter-up">2</h1>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">4</h1>
                     <span class="fs-5 fw-semi-bold text-light">Prime Locations</span>
                 </div>
             </div>
@@ -231,54 +486,110 @@
     <!-- Team Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fs-5 fw-bold text-primary">Our Team</p>
-                <h1 class="display-5 mb-5">Dedicated & Experienced Team Members</h1>
+                <h1 class="display-5 mb-5">Meet Our Team</h1>
+                <p>Dedicated professionals committed to your land investment success</p>
             </div>
-            <div class="row g-4">
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Team Member 1 -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Doris Jordan</h4>
-                            <p class="text-primary">Landscape Designer</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                    <div class="team-card bg-white border rounded-3 p-4 h-100" style="transition: all 0.3s ease;">
+                        <div class="team-image mb-3" style="height: 250px; border-radius: 10px; overflow: hidden; background: #e9ecef;">
+                            <img class="img-fluid w-100 h-100" style="object-fit: cover;" src="img/testo1.png" alt="Rajesh Kumar" />
+                        </div>
+                        <div class="team-content text-center">
+                            <h4 class="mb-2" style="color: #0f4229; font-weight: bold;">Rajesh Kumar</h4>
+                            <p class="text-primary fw-semibold mb-3" style="font-size: 0.95rem;">Founder & CEO</p>
+                            <p class="text-muted mb-3" style="font-size: 0.9rem; line-height: 1.6;">
+                                With over 15 years of experience in real estate and agriculture land development, 
+                                Rajesh leads our team with vision and expertise.
+                            </p>
+                            <div class="team-social d-flex justify-content-center gap-2">
+                                <a class="btn btn-square rounded-2" href="mailto:rajesh@greenspacess.com" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-envelope" style="color: #0f4229;"></i>
+                                </a>
+                                <a class="btn btn-square rounded-2" href="tel:+917972258038" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-phone" style="color: #0f4229;"></i>
+                                </a>
+                                <a class="btn btn-square rounded-2" href="#" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-linkedin-in" style="color: #0f4229;"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Team Member 2 -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/team-2.jpg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Johnny Ramirez</h4>
-                            <p class="text-primary">Garden Designer</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                    <div class="team-card bg-white border rounded-3 p-4 h-100" style="transition: all 0.3s ease;">
+                        <div class="team-image mb-3" style="height: 250px; border-radius: 10px; overflow: hidden; background: #e9ecef;">
+                            <img class="img-fluid w-100 h-100" style="object-fit: cover;" src="img/testo2.png" alt="Priya Sharma" />
+                        </div>
+                        <div class="team-content text-center">
+                            <h4 class="mb-2" style="color: #0f4229; font-weight: bold;">Priya Sharma</h4>
+                            <p class="text-primary fw-semibold mb-3" style="font-size: 0.95rem;">Legal & Documentation Head</p>
+                            <p class="text-muted mb-3" style="font-size: 0.9rem; line-height: 1.6;">
+                                Priya ensures all our land transactions are legally verified and transparent. 
+                                Her expertise guarantees clear title and hassle-free documentation.
+                            </p>
+                            <div class="team-social d-flex justify-content-center gap-2">
+                                <a class="btn btn-square rounded-2" href="mailto:priya@greenspacess.com" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-envelope" style="color: #0f4229;"></i>
+                                </a>
+                                <a class="btn btn-square rounded-2" href="tel:+917666090107" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-phone" style="color: #0f4229;"></i>
+                                </a>
+                                <a class="btn btn-square rounded-2" href="#" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-linkedin-in" style="color: #0f4229;"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Team Member 3 -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item rounded">
-                        <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">Diana Wagner</h4>
-                            <p class="text-primary">Senior Gardener</p>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                    <div class="team-card bg-white border rounded-3 p-4 h-100" style="transition: all 0.3s ease;">
+                        <div class="team-image mb-3" style="height: 250px; border-radius: 10px; overflow: hidden; background: #e9ecef;">
+                            <img class="img-fluid w-100 h-100" style="object-fit: cover;" src="img/testo3.png" alt="Amit Deshmukh" />
+                        </div>
+                        <div class="team-content text-center">
+                            <h4 class="mb-2" style="color: #0f4229; font-weight: bold;">Amit Deshmukh</h4>
+                            <p class="text-primary fw-semibold mb-3" style="font-size: 0.95rem;">Project Development Manager</p>
+                            <p class="text-muted mb-3" style="font-size: 0.9rem; line-height: 1.6;">
+                                Amit oversees all our land development projects, ensuring quality infrastructure 
+                                and timely delivery. His agricultural expertise helps clients maximize potential.
+                            </p>
+                            <div class="team-social d-flex justify-content-center gap-2">
+                                <a class="btn btn-square rounded-2" href="mailto:amit@greenspacess.com" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-envelope" style="color: #0f4229;"></i>
+                                </a>
+                                <a class="btn btn-square rounded-2" href="tel:+917972258038" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-phone" style="color: #0f4229;"></i>
+                                </a>
+                                <a class="btn btn-square rounded-2" href="#" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fab fa-linkedin-in" style="color: #0f4229;"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <style>
+                .team-card:hover {
+                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+                    transform: translateY(-5px);
+                }
+                .team-social a:hover {
+                    background: #348e38 !important;
+                }
+                .team-social a:hover i {
+                    color: white !important;
+                }
+            </style>
         </div>
     </div>
     <!-- Team End -->
@@ -394,6 +705,9 @@
     
     <!-- Lazy Loading Script -->
     <script src="js/lazy-load.js"></script>
+    
+    <!-- Dropdown Toggle Script -->
+    <script src="js/dropdown.js"></script>
 </body>
 
 </html>

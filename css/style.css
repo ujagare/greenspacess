@@ -18,6 +18,42 @@ body {
   z-index: 99;
 }
 
+/* Mobile Back Arrow - Sticky */
+.mobile-back-arrow {
+  position: fixed !important;
+  top: 130px !important;
+  left: 15px !important;
+  z-index: 99999 !important;
+  display: none;
+  width: 45px;
+  height: 45px;
+  background: rgba(52, 142, 56, 0.95);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  pointer-events: auto !important;
+}
+
+.mobile-back-arrow:hover {
+  background: rgba(33, 136, 56, 1);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.mobile-back-arrow i {
+  color: white;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .mobile-back-arrow {
+    display: flex !important;
+  }
+}
+
 h1,
 .h1,
 h2,
@@ -101,10 +137,16 @@ h6,
   top: -100px;
   transition: 0.5s;
   background-color: rgba(255, 255, 255, 0.95) !important;
+  z-index: 1020;
 }
 
 .navbar {
   background-color: rgba(255, 255, 255, 0.95) !important;
+  z-index: 1020;
+}
+
+.navbar-collapse {
+  z-index: 1019 !important;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -128,6 +170,17 @@ h6,
   font-weight: 900;
   vertical-align: middle;
   margin-left: 8px;
+}
+
+.navbar-toggler {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 8px 12px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 @media (max-width: 991.98px) {
@@ -1073,8 +1126,9 @@ h3,
 
 @media (max-width: 768px) {
   .hero-logo {
-    width: 80px !important;
-    height: 80px !important;
+    max-width: 140px !important;
+    width: 140px !important;
+    height: auto !important;
   }
 }
 
@@ -1109,6 +1163,7 @@ h3,
 
   body #header-carousel .carousel-caption h1 {
     font-size: 1.5rem !important;
+    margin-top: 2rem !important;
     margin-bottom: 1.5rem !important;
     line-height: 1.3 !important;
   }
@@ -1121,13 +1176,11 @@ h3,
   }
 
   body #header-carousel .carousel-caption .col-12.text-center .hero-logo {
-    max-width: 80px !important;
-    width: 80px !important;
+    max-width: 140px !important;
+    width: 140px !important;
     height: auto !important;
-    max-height: 80px !important;
     margin: -100px auto 1rem auto !important;
     display: block !important;
-    order: -1 !important;
   }
 
   body #header-carousel .carousel-caption .col-12.text-center {

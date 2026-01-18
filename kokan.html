@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GREENSPACESS | Konkan Project</title>
+
+<!-- Favicon -->
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>" rel="icon" />
+
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+<!-- Libraries Stylesheet -->
+<link href="lib/animate/animate.min.css" rel="stylesheet" />
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet" />
+<link href="css/dropdown.css" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+<style>
+.font-display { font-family: 'Poppins', sans-serif; }
+.font-body { font-family: 'Poppins', sans-serif; }
+body { font-family: 'Poppins', sans-serif; }
+
+/* Navbar fix for visibility - CRITICAL */
+body .navbar {
+    background-color: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+}
+body .navbar .navbar-nav .nav-link {
+    color: #0F4229 !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+body .navbar .navbar-nav .nav-link:hover,
+body .navbar .navbar-nav .nav-link.active {
+    color: #28a745 !important;
+}
+body .navbar-toggler {
+    border-color: #0F4229 !important;
+}
+body .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(15, 66, 41, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+body .navbar-collapse {
+    background: #ffffff !important;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 768px) {
+    /* Hero Section */
+    #home {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 0 40px;
+    }
+    
+    #home .absolute.top-1\/5 {
+        position: relative;
+        top: auto;
+        padding: 20px;
+    }
+    
+    /* Hero Heading - Smaller on Mobile */
+    #home h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Hero Paragraph - Smaller on Mobile */
+    #home p {
+        font-size: 0.875rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Location Badge - Smaller */
+    #home .inline-flex.gap-2 {
+        font-size: 0.75rem !important;
+        padding: 0.375rem 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    /* Schedule Button Mobile */
+    #home a[href="#contact"] {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.875rem !important;
+    }
+    
+    #home a[href="#contact"] svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    
+    /* Land Ownership Button Mobile */
+    a.bg-\[#0F4229\] {
+        padding: 0.625rem 1.25rem !important;
+        font-size: 0.875rem !important;
+    }
+    
+    a.bg-\[#0F4229\] svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+    
+    /* Section Headings - Smaller */
+    .text-4xl, .sm\:text-5xl {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .text-5xl {
+        font-size: 1.75rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Section Paragraphs - Smaller */
+    .text-lg {
+        font-size: 0.875rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Government Projects Section - Smaller Text */
+    .bg-white.rounded-2xl h4 {
+        font-size: 0.875rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .bg-white.rounded-2xl p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .bg-white.rounded-2xl .font-semibold {
+        font-size: 0.75rem !important;
+    }
+    
+    .bg-white.rounded-2xl i.text-5xl {
+        font-size: 1.5rem !important;
+    }
+    
+    .bg-white.rounded-2xl {
+        padding: 0.75rem !important;
+    }
+    
+    /* Text-2xl headings in cards - Even Smaller */
+    .bg-white.rounded-2xl .text-2xl {
+        font-size: 0.875rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Tourism Sections - Smaller Text */
+    .text-3xl {
+        font-size: 1.25rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .bg-white.rounded-2xl ul li {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .bg-white.rounded-2xl ul li strong {
+        font-size: 0.75rem !important;
+    }
+    
+    /* Feature Cards */
+    .flex.items-start.gap-2\.5 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Grid Layouts */
+    .grid.grid-cols-2:not(#how-it-works .grid) {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Keep 2x2 grid for How to Acquire section */
+    #how-it-works .grid.grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+    
+    #how-it-works .grid.grid-cols-2 img {
+        aspect-ratio: 1 / 1 !important;
+    }
+    
+    .grid.md\:grid-cols-4 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .grid.md\:grid-cols-3 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .grid.lg\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Image Heights */
+    img.h-\[600px\] {
+        height: 300px !important;
+    }
+    
+    /* Padding Adjustments */
+    .py-24 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    /* Footer Social Icons Mobile */
+    .footer .btn-square {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 0 !important;
+        font-size: 14px !important;
+    }
+    
+    .footer .btn-square i {
+        font-size: 14px !important;
+    }
+    
+    .px-6 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Gallery Grid */
+    .auto-rows-\[350px\] {
+        auto-rows: 250px !important;
+    }
+    
+    .md\:col-span-2, .md\:col-span-3 {
+        grid-column: span 1 !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+   <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top p-0">
+      <a
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <img
+          src="img/LOGO/Greenspacess_Black BG Logo.png"
+          alt="GREENSPACESS Logo"
+          style="height: 120px"
+        />
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler me-4"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="about.html" class="nav-item nav-link">About</a>
+          <a href="service.html" class="nav-item nav-link">Services</a>
+          <div class="nav-item dropdown">
+            <a href="project.html" class="nav-link dropdown-toggle">Projects</a>
+            <div class="projects-dropdown">
+              <div class="projects-dropdown-grid">
+                <a href="purandhar.html" class="project-card">
+                  <img src="img/purnadar/purnadarhero.png" alt="Purandhar" class="project-card-image">
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Purandhar Project</h4>
+                    <p class="project-card-description">Premium agriculture land with clear title near Pune Ring Road</p>
+                    <span class="project-card-badge">Featured</span>
+                  </div>
+                </a>
+                <a href="khed.html" class="project-card">
+                  <img src="img/khed/Serene valley with winding river.png" alt="Khed" class="project-card-image">
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Khed Project</h4>
+                    <p class="project-card-description">Lake touch farmhouse plots with scenic valley views</p>
+                    <span class="project-card-badge">Premium</span>
+                  </div>
+                </a>
+                <a href="kokan.html" class="project-card">
+                  <img src="img/konkan/costal.png" alt="Konkan" class="project-card-image">
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Konkan Project</h4>
+                    <p class="project-card-description">Coastal land on Mumbai-Goa Highway in tourism belt</p>
+                    <span class="project-card-badge">New Launch</span>
+                  </div>
+                </a>
+                <a href="mulshi.html" class="project-card">
+                  <img src="img/Mulshi/Mulshi-Lake-and-Dam-4.webp" alt="Mulshi" class="project-card-image">
+                  <div class="project-card-content">
+                    <h4 class="project-card-title">Mulshi Project</h4>
+                    <p class="project-card-description">Lake touch land near Mulshi Dam with mountain views</p>
+                    <span class="project-card-badge">Hot Deal</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Mobile Back Arrow - Outside sections for sticky behavior -->
+    <a href="javascript:history.back()" class="mobile-back-arrow" title="Go Back">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        
+        <div class="absolute inset-0">
+            <img src="img/konkan/costal.png" alt="Coastal land in Konkan" class="w-full h-full object-cover object-center">
+            <div class="text-5xl tracking-normal bg-gradient-to-r from-black via-black/50 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+        </div>
+
+        <div class="absolute top-1/5 left-0 z-10 w-full max-w-4xl px-6 md:px-12 text-left">
+
+  <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex gap-2 backdrop-saturate-150 text-sm font-medium text-amber-300 bg-[#202525]/40 border-white/10 border rounded-full mb-8 pt-2 pr-4 pb-2 pl-4 backdrop-blur-[4px] items-center aos-init aos-animate">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+      <circle cx="12" cy="10" r="3"></circle>
+    </svg>
+    Konkan, Maharashtra
+  </div>
+
+  <h1 data-aos="fade-up" data-aos-duration="1000" class="leading-snug aos-init aos-animate sm:text-6xl lg:text-6xl text-4xl font-semibold text-white tracking-tight font-display text-left mb-12">
+  Invest in <span class="text-amber-300">Konkan's Tourism Belt</span> - On Mumbai-Goa Highway
+</h1>
+
+  <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" class="sm:text-xl leading-relaxed text-lg text-stone-300 font-body text-left max-w-2xl mb-10 aos-init aos-animate">
+    Own premium coastal agriculture land in the booming Konkan tourism region. Legally-verified plots near pristine beaches, famous for Alphonso mangoes, with excellent highway connectivity driving 40% annual tourism growth.
+  </p>
+
+  <a href="#contact" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" class="hover:bg-amber-100 transition-all inline-flex items-center justify-center gap-2 font-semibold text-[#0F4229] bg-white rounded-[8px] py-4 px-6 drop-shadow-sm group aos-init aos-animate">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-800">
+        <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    Schedule a Site Visit
+  </a>
+</div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="32" height="32" viewBox="0 0 24 24" data-icon="lucide:chevron-down" data-width="32" class="iconify text-white/50 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path></svg>
+        </div>
+    </section>
+
+    <section class="border-y bg-[#EFEFE3] border-amber-900/20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center max-w-7xl mx-auto py-12 px-6">
+            <div class="flex flex-col items-center aos-init" data-aos="fade-up" data-aos-delay="0">
+                <p class="text-xl font-bold text-[#0F4229] font-display mb-2">Clear Title Plots</p>
+                <p class="uppercase text-sm text-[#202525] tracking-wider font-body">100% Legal Verification</p>
+            </div>
+            <div class="flex flex-col items-center aos-init" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-xl font-bold text-[#0F4229] font-display mb-2">Coastal Paradise</p>
+                <p class="uppercase text-sm text-[#202525] tracking-wider font-body">Near Pristine Beaches</p>
+            </div>
+            <div class="flex flex-col items-center aos-init" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-xl font-bold text-[#0F4229] font-display mb-2">Alphonso Belt</p>
+                <p class="uppercase text-sm text-[#202525] tracking-wider font-body">Premium Mango Land</p>
+            </div>
+            <div class="flex flex-col items-center aos-init" data-aos="fade-up" data-aos-delay="300">
+                <p class="text-xl font-bold text-[#0F4229] font-display mb-2">Tourism Growth</p>
+                <p class="uppercase text-sm text-[#202525] tracking-wider font-body">High Appreciation Zone</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#EFEFE3] py-24 px-6 overflow-hidden" id="about">
+        <div class="grid lg:grid-cols-2 gap-16 max-w-7xl mx-auto items-center">
+            
+            <div class="relative group order-first lg:order-first aos-init" data-aos="fade-right">
+                <div class="absolute -bottom-6 -left-6 w-full h-full bg-[#D6B876] rounded-[2px] -z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                <img src="img/konkan/ae70018c9733f86296749cefa112e084.jpg" alt="Coastal Farmland in Konkan" class="relative rounded-[2px] w-full h-[600px] object-cover shadow-2xl transition-transform duration-700 hover:scale-105">
+            </div>
+
+            <div class="aos-init" data-aos="fade-left">
+                <p class="text-sm uppercase tracking-widest font-bold mb-4 text-white bg-[#28a745] px-4 py-2 rounded-full inline-block">Konkan Project</p>
+                <h2 class="font-display text-4xl sm:text-5xl text-[#0F4229] mb-6 tracking-tight leading-tight">
+                    Your Gateway to Konkan's <span class="italic text-[#0F4229]/70">Booming Tourism Belt.</span>
+                </h2>
+                <p class="leading-relaxed text-lg text-[#202525] font-body mb-8">
+                    GREENSPACESS brings you premium agriculture land in the heart of Konkan without any complexity. Experience breathtaking coastal beauty, world-famous Alphonso mango cultivation, and tourism-driven growth with clear-title, legally verified plots. It works like this:
+                </p>
+
+                <div class="flex flex-col gap-2">
+                    <div class="flex items-start gap-2.5 p-3 rounded-lg bg-white shadow-sm border border-[#0F4229]/10 hover:border-[#28a745] transition-all duration-300 group hover:shadow-md">
+                        <div class="w-8 h-8 bg-gradient-to-br from-[#28a745] to-[#20c997] rounded-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-[#0F4229] font-body mb-0.5">32 Acres Coastal Paradise</h3>
+                            <p class="text-xs text-[#202525]/70 font-body leading-tight">Clear-title agriculture land with 7/12 extract, just 12 km from coastal beaches and 15 km from NH-66.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-2.5 p-3 rounded-lg bg-white shadow-sm border border-[#0F4229]/10 hover:border-[#D6B876] transition-all duration-300 group hover:shadow-md">
+                        <div class="w-8 h-8 bg-gradient-to-br from-[#D6B876] to-[#B8935E] rounded-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-[#0F4229] font-body mb-0.5">25-30% Annual Appreciation</h3>
+                            <p class="text-xs text-[#202525]/70 font-body leading-tight">Prime location in the booming Konkan tourism belt with growing demand for beach resorts and farmhouses.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-2.5 p-3 rounded-lg bg-white shadow-sm border border-[#0F4229]/10 hover:border-[#0F4229] transition-all duration-300 group hover:shadow-md">
+                        <div class="w-8 h-8 bg-gradient-to-br from-[#0F4229] to-[#2a5a3f] rounded-md flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-[#0F4229] font-body mb-0.5">Coastal Infrastructure</h3>
+                            <p class="text-xs text-[#202525]/70 font-body leading-tight">18-feet concrete roads, MSEDCL electricity, abundant monsoon water, and famous red laterite soil for Alphonso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Information Section -->
+    <section class="bg-[#EFEFE3] py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-widest font-bold mb-4 text-white bg-[#28a745] px-4 py-2 rounded-full inline-block">Konkan Project</p>
+                <h2 class="font-display text-4xl sm:text-5xl text-[#0F4229] mb-4 tracking-tight">Premium Coastal Agriculture Land in Konkan</h2>
+                <p class="text-lg text-[#202525] max-w-3xl mx-auto">
+                    Experience breathtaking coastal beauty and world-famous Alphonso mango cultivation at our prestigious Konkan project. Located in the pristine Konkan coastline, this premium agriculture land offers exceptional opportunities for Alphonso farming, beach farmhouse development, and long-term investment appreciation.
+                </p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-[#0F4229]/10">
+                    <div class="text-4xl font-bold text-[#28a745] mb-2">32 Acres</div>
+                    <div class="text-sm text-[#202525]/70">Total Area</div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-[#0F4229]/10">
+                    <div class="text-4xl font-bold text-[#28a745] mb-2">100%</div>
+                    <div class="text-sm text-[#202525]/70">Legal Verified</div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-[#0F4229]/10">
+                    <div class="text-4xl font-bold text-[#28a745] mb-2">12 km</div>
+                    <div class="text-sm text-[#202525]/70">From Beach</div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 text-center shadow-lg border border-[#0F4229]/10">
+                    <div class="text-4xl font-bold text-[#28a745] mb-2">15 km</div>
+                    <div class="text-sm text-[#202525]/70">From NH-66</div>
+                </div>
+            </div>
+
+            <!-- Government Projects -->
+            <div class="mb-16">
+                <h3 class="font-display text-4xl sm:text-5xl text-[#0F4229] mb-8 text-center">Major Government Infrastructure Projects</h3>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-[#0F4229]/10 mb-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-road text-5xl text-[#28a745]"></i>
+                        <h4 class="text-2xl font-bold text-[#0F4229]">1️⃣ Mumbai-Goa National Highway (NH-66) - Major Upgradation</h4>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-[#202525]">
+                        <div>
+                            <p class="font-semibold mb-2">Status:</p>
+                            <p>✔️ Under execution (phase-wise) ✔️ Multiple stretches operational, some stretches still under construction</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Details:</p>
+                            <p>4-lane highway project with bridges, flyovers, and bypass roads. Travel time Mumbai ↔ Konkan significantly reduced.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Impact:</p>
+                            <p>Tourism boost, faster logistics & goods movement, real estate and farmhouse demand increase.</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Reality Check:</p>
+                            <p>Project has faced delays but work is active and not cancelled.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-[#0F4229]/10 mb-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-train text-5xl text-[#28a745]"></i>
+                        <h4 class="text-2xl font-bold text-[#0F4229]">2️⃣ Konkan Railway - Operational & Capacity Improvement</h4>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-[#202525]">
+                        <div>
+                            <p class="font-semibold mb-2">Status:</p>
+                            <p>✔️ Fully operational ✔️ Track strengthening & safety upgrades ongoing</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Details:</p>
+                            <p>Freight + passenger connectivity, station modernization works, signal & safety upgrades</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Impact:</p>
+                            <p>Strong regional connectivity, tourism and cargo movement support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-[#0F4229]/10 mb-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-ship text-5xl text-[#28a745]"></i>
+                        <h4 class="text-2xl font-bold text-[#0F4229]">3️⃣ Coastal Road & Port-Linked Development</h4>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-[#202525]">
+                        <div>
+                            <p class="font-semibold mb-2">Status:</p>
+                            <p>✔️ Ongoing / operational (location-specific)</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Includes:</p>
+                            <p>Minor ports development, coastal road improvements, fisheries infrastructure upgrades</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Government Bodies:</p>
+                            <p>Maharashtra Maritime Board, State PWD</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Impact:</p>
+                            <p>Local employment, coastal economy support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-[#0F4229]/10 mb-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-anchor text-5xl text-[#28a745]"></i>
+                        <h4 class="text-2xl font-bold text-[#0F4229]">4️⃣ Sagarmala Project (Selective Impact)</h4>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-[#202525]">
+                        <div>
+                            <p class="font-semibold mb-2">Status:</p>
+                            <p>✔️ Policy-level + selective execution</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Focus Areas:</p>
+                            <p>Port-based development, fisheries, logistics & coastal transport, jetty & harbor improvements</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Reality Check:</p>
+                            <p>Large-scale industrial impact is limited, but supporting infrastructure is improving.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-[#0F4229]/10 mb-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-route text-5xl text-[#28a745]"></i>
+                        <h4 class="text-2xl font-bold text-[#0F4229]">5️⃣ Rural Road Development (PMGSY + PWD)</h4>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-[#202525]">
+                        <div>
+                            <p class="font-semibold mb-2">Status:</p>
+                            <p>✔️ Actively ongoing</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Details:</p>
+                            <p>Village-to-highway connectivity, concrete/blacktop roads, better access to interior Konkan villages</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Impact:</p>
+                            <p>Farm land and interior plots accessibility improved, tourism & agro-investment support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-[#0F4229]/10 mb-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-tint text-5xl text-[#28a745]"></i>
+                        <h4 class="text-2xl font-bold text-[#0F4229]">6️⃣ Water Supply & Irrigation Projects</h4>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-[#202525]">
+                        <div>
+                            <p class="font-semibold mb-2">Status:</p>
+                            <p>✔️ Operational + incremental upgrades</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Details:</p>
+                            <p>Small dams, lift irrigation schemes, drinking water projects</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Impact:</p>
+                            <p>Agriculture stability, support for farmhouses & plantations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-[#0F4229]/10 mb-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <i class="fas fa-bolt text-5xl text-[#28a745]"></i>
+                        <h4 class="text-2xl font-bold text-[#0F4229]">7️⃣ Power Infrastructure (MSEDCL)</h4>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-[#202525]">
+                        <div>
+                            <p class="font-semibold mb-2">Status:</p>
+                            <p>✔️ Fully operational</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-2">Details:</p>
+                            <p>Rural electrification coverage, power supply improvements in villages, renewable energy push (solar projects - limited scale)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-green-50 rounded-2xl p-8 shadow-lg border-2 border-[#28a745]/20">
+                    <div class="flex items-center gap-4 mb-6">
+                        <i class="fas fa-map-marked-alt text-5xl text-[#28a745]"></i>
+                        <h4 class="text-3xl font-bold text-[#0F4229]">🌴 Konkan Tourism Boom - Major Attractions Nearby</h4>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white rounded-xl p-6 shadow-md">
+                            <h5 class="text-xl font-bold text-[#0F4229] mb-3 flex items-center gap-2">
+                                <i class="fas fa-water text-[#28a745]"></i>
+                                Famous Beaches
+                            </h5>
+                            <ul class="space-y-2 text-[#202525]">
+                                <li>✓ <strong>Kashid Beach</strong> - White sand, crystal clear water (20-30 km)</li>
+                                <li>✓ <strong>Alibaug Beach</strong> - Popular weekend destination (35 km)</li>
+                                <li>✓ <strong>Murud Beach</strong> - Pristine coastline (40 km)</li>
+                                <li>✓ <strong>Diveagar Beach</strong> - Clean & peaceful (50 km)</li>
+                                <li>✓ <strong>Harihareshwar Beach</strong> - Temple town beach (60 km)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-md">
+                            <h5 class="text-xl font-bold text-[#0F4229] mb-3 flex items-center gap-2">
+                                <i class="fas fa-fort-awesome text-[#28a745]"></i>
+                                Historical Forts
+                            </h5>
+                            <ul class="space-y-2 text-[#202525]">
+                                <li>✓ <strong>Murud-Janjira Fort</strong> - Sea fort, undefeated (45 km)</li>
+                                <li>✓ <strong>Kolaba Fort</strong> - Island fort in Alibaug (35 km)</li>
+                                <li>✓ <strong>Korlai Fort</strong> - Portuguese fort (25 km)</li>
+                                <li>✓ <strong>Raigad Fort</strong> - Shivaji Maharaj's capital (70 km)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-md">
+                            <h5 class="text-xl font-bold text-[#0F4229] mb-3 flex items-center gap-2">
+                                <i class="fas fa-tree text-[#28a745]"></i>
+                                Nature & Adventure
+                            </h5>
+                            <ul class="space-y-2 text-[#202525]">
+                                <li>✓ <strong>Phansad Wildlife Sanctuary</strong> - Rich biodiversity</li>
+                                <li>✓ <strong>Kundalika River</strong> - White water rafting hub</li>
+                                <li>✓ <strong>Tamhini Ghat</strong> - Scenic monsoon drive</li>
+                                <li>✓ <strong>Karnala Bird Sanctuary</strong> - Bird watching paradise</li>
+                                <li>✓ <strong>Waterfalls</strong> - Multiple seasonal waterfalls</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-md">
+                            <h5 class="text-xl font-bold text-[#0F4229] mb-3 flex items-center gap-2">
+                                <i class="fas fa-hotel text-[#28a745]"></i>
+                                Hospitality Growth
+                            </h5>
+                            <ul class="space-y-2 text-[#202525]">
+                                <li>✓ <strong>100+ Resorts</strong> - Luxury to budget options</li>
+                                <li>✓ <strong>500+ Homestays</strong> - Growing agri-tourism</li>
+                                <li>✓ <strong>Beach Shacks</strong> - Seasonal food & stay</li>
+                                <li>✓ <strong>Farmhouse Rentals</strong> - Weekend getaway trend</li>
+                                <li>✓ <strong>Camping Sites</strong> - Adventure tourism boom</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="mb-16 px-6 lg:px-32 xl:px-48 2xl:px-64"></div>
+                <h3 class="font-display text-4xl sm:text-5xl text-[#0F4229] mb-8 text-center">Premium Project Features</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-[#0F4229]/10 hover:border-[#D6B876] transition-all">
+                        <i class="fas fa-check-circle text-4xl text-[#28a745] mb-4"></i>
+                        <h4 class="text-xl font-bold text-[#0F4229] mb-3">Legal Verification</h4>
+                        <p class="text-[#202525]/70">Complete 7/12 extract, clear title, NA permission, and approved layouts.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-[#0F4229]/10 hover:border-[#D6B876] transition-all">
+                        <i class="fas fa-seedling text-4xl text-[#28a745] mb-4"></i>
+                        <h4 class="text-xl font-bold text-[#0F4229] mb-3">Premium Black Soil</h4>
+                        <p class="text-[#202525]/70">Rich black cotton soil with high fertility index, perfect for agriculture.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-[#0F4229]/10 hover:border-[#D6B876] transition-all">
+                        <i class="fas fa-road text-4xl text-[#28a745] mb-4"></i>
+                        <h4 class="text-xl font-bold text-[#0F4229] mb-3">Direct Road Access</h4>
+                        <p class="text-[#202525]/70">20-feet wide concrete internal roads with direct highway connectivity.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-[#0F4229]/10 hover:border-[#D6B876] transition-all">
+                        <i class="fas fa-tint text-4xl text-[#28a745] mb-4"></i>
+                        <h4 class="text-xl font-bold text-[#0F4229] mb-3">Water Facility</h4>
+                        <p class="text-[#202525]/70">Community bore wells with excellent water table. Drip irrigation support provided.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-[#0F4229]/10 hover:border-[#D6B876] transition-all">
+                        <i class="fas fa-bolt text-4xl text-[#28a745] mb-4"></i>
+                        <h4 class="text-xl font-bold text-[#0F4229] mb-3">Electricity</h4>
+                        <p class="text-[#202525]/70">MSEDCL electricity connection to all plots. Three-phase power available.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-[#0F4229]/10 hover:border-[#D6B876] transition-all">
+                        <i class="fas fa-tree text-4xl text-[#28a745] mb-4"></i>
+                        <h4 class="text-xl font-bold text-[#0F4229] mb-3">Plantation Support</h4>
+                        <p class="text-[#202525]/70">Free consultation on crop selection and sustainable agriculture practices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Highlights -->
+            <div class="mb-16 px-6 lg:px-32 xl:px-48 2xl:px-64"></div>
+                <h3 class="font-display text-4xl sm:text-5xl text-[#0F4229] mb-8 text-center">Why Invest in Konkan?</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-[#28a745] to-[#20c997] rounded-2xl p-8 text-white text-center">
+                        <div class="text-5xl font-bold mb-3">25-30%</div>
+                        <p class="text-lg">Expected Annual Appreciation</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-[#28a745] to-[#20c997] rounded-2xl p-8 text-white text-center">
+                        <div class="text-5xl font-bold mb-3">15 km</div>
+                        <p class="text-lg">From Airport Site</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-[#28a745] to-[#20c997] rounded-2xl p-8 text-white text-center">
+                        <div class="text-5xl font-bold mb-3">100%</div>
+                        <p class="text-lg">Clear Title & 7/12 Extract</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amenities -->
+            <div class="px-6 lg:px-24 xl:px-32">
+                <h3 class="font-display text-4xl sm:text-5xl text-[#0F4229] mb-8 text-center">Modern Amenities</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl p-6 text-center shadow-lg border border-[#0F4229]/10 hover:bg-[#28a745] transition-all group">
+                        <i class="fas fa-road text-4xl mb-3 text-[#28a745]  transition-colors"></i>
+                        <h6 class="font-semibold  transition-colors">Internal Roads</h6>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 text-center shadow-lg border border-[#0F4229]/10 hover:bg-[#28a745] transition-all group">
+                        <i class="fas fa-bolt text-4xl mb-3 text-[#28a745] transition-colors"></i>
+                        <h6 class="font-semibold  transition-colors">Electricity</h6>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 text-center shadow-lg border border-[#0F4229]/10 hover:bg-[#28a745] transition-all group">
+                        <i class="fas fa-tint text-4xl mb-3 text-[#28a745]  transition-colors"></i>
+                        <h6 class="font-semibold  transition-colors">Water Supply</h6>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 text-center shadow-lg border border-[#0F4229]/10 hover:bg-[#28a745] transition-all group">
+                        <i class="fas fa-tree text-4xl mb-3 text-[#28a745]  transition-colors"></i>
+                        <h6 class="font-semibold  transition-colors">Green Plantation</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="max-w-5xl mx-auto py-24 px-6">
+            <div class="text-center mb-16 aos-init" data-aos="fade-up">
+                <p class="text-sm uppercase tracking-widest font-semibold mb-4 text-white bg-[#28a745] px-4 py-2 rounded-full inline-block">The Comparison</p>
+                <h2 class="font-display text-4xl sm:text-5xl text-[#0F4229] mb-4 tracking-tight">Why A GREENSPACESS Plot?</h2>
+                <p class="text-lg text-[#202525] max-w-2xl mx-auto">
+                    Traditional land investment can be complicated. We have simplified the process to make it secure and transparent.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12 items-center">
+                <div class="relative bg-white rounded-2xl p-8 border border-[#0F4229]/10 shadow-sm h-full aos-init" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-[#0F4229] text-2xl font-display mb-8 text-center opacity-80">Traditional Land Purchase</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                            </div>
+                            <p class="text-[#202525]/70 font-medium">Complex legal verification</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                            </div>
+                            <p class="text-[#202525]/70 font-medium">Hidden development costs</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                            </div>
+                            <p class="text-[#202525]/70 font-medium">Lack of basic infrastructure</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-400"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                            </div>
+                            <p class="text-[#202525]/70 font-medium">Uncertain future appreciation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative bg-[#0F4229] rounded-2xl p-8 border border-[#D6B876]/30 shadow-2xl h-full md:scale-105 z-10 aos-init" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D6B876] text-[#0F4229] text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-lg">Smart Choice</div>
+                    <h3 class="text-white text-2xl font-display mb-8 text-center">GREENSPACESS</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#D6B876]/20 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-[#D6B876]"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </div>
+                            <p class="text-white font-medium">100% legally verified plots</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#D6B876]/20 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-[#D6B876]"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </div>
+                            <p class="text-white font-medium">Ready-to-use infrastructure</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#D6B876]/20 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-[#D6B876]"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </div>
+                            <p class="text-white font-medium">Clear title and 7/12 extract</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-8 h-8 rounded-full bg-[#D6B876]/20 flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-[#D6B876]"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </div>
+                            <p class="text-white font-medium">High-growth potential</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center aos-init" data-aos="fade-up">
+                <a href="#contact" class="bg-[#0F4229] hover:bg-[#0F4229]/90 text-white px-8 py-4 rounded-full text-base font-medium transition-all inline-flex items-center gap-2 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    Enquire Now
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path d="M5 12h14m-7-7l7 7l-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="overflow-hidden bg-[#EFEFE3] py-24 px-6 relative" id="how-it-works">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D6B876]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            
+            <div class="order-2 lg:order-1 aos-init" data-aos="fade-right">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="img/konkan/2e231d0ddf1956c265c30633dd4f57fe.jpg" alt="Schedule a site visit" class="rounded-2xl w-full aspect-square object-cover shadow-lg hover:scale-[1.02] transition-transform duration-500">
+                    <img src="img/konkan/1d256abc70b1d8e3a6b33a1940fa8830.jpg" alt="Select your plot" class="rounded-2xl w-full aspect-square object-cover mt-8 shadow-lg hover:scale-[1.02] transition-transform duration-500">
+                    <img src="img/konkan/63efa49d517c34fc36b06eeff168dc56.jpg" alt="Complete legal formalities" class="rounded-2xl w-full aspect-square object-cover shadow-lg hover:scale-[1.02] transition-transform duration-500">
+                    <img src="img/konkan/d6d75b1eb75bf20390283044e67b6f11.jpg" alt="Become a landowner" class="rounded-2xl w-full aspect-square object-cover mt-8 shadow-lg hover:scale-[1.02] transition-transform duration-500">
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2 aos-init" data-aos="fade-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#28a745] text-white text-sm font-bold tracking-wide mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path>
+                    </svg>
+                    Simple Process
+                </div>
+
+                <h2 class="font-display text-4xl sm:text-5xl text-[#0F4229] mb-6 tracking-tight">How to Acquire Your Land</h2>
+                <p class="text-lg text-[#202525] mb-8 leading-relaxed">
+                    We've removed the confusion and barriers. Acquiring your own piece of high-growth agricultural land is a simple, transparent process.
+                </p>
+
+                <div class="space-y-4 mb-10">
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-[#0F4229]/5 shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D6B876]/50 group aos-init" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 bg-[#D6B876]/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#D6B876] transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0F4229]">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-[#0F4229] font-bold text-lg">Schedule a Site Visit</h4>
+                            <p class="text-[#202525]/70 text-sm">Contact us to schedule a visit to the site at your convenience.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-[#0F4229]/5 shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D6B876]/50 group aos-init" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 bg-[#D6B876]/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#D6B876] transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0F4229]">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-[#0F4229] font-bold text-lg">Select Your Plot</h4>
+                            <p class="text-[#202525]/70 text-sm">Choose your preferred plot from our master layout plan.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-[#0F4229]/5 shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D6B876]/50 group aos-init" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 bg-[#D6B876]/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#D6B876] transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0F4229]">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-[#0F4229] font-bold text-lg">Complete Legal Formalities</h4>
+                            <p class="text-[#202525]/70 text-sm">Our team will assist you with all the necessary paperwork for a smooth transfer.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-[#0F4229]/5 shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D6B876]/50 group aos-init" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-12 h-12 bg-[#D6B876]/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#D6B876] transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0F4229]">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-[#0F4229] font-bold text-lg">Become a Landowner</h4>
+                            <p class="text-[#202525]/70 text-sm">Congratulations! You are now the owner of a high-potential agricultural plot.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="bg-[#0F4229] hover:bg-[#0F4229]/90 text-white px-8 py-4 md:px-8 md:py-4 px-4 py-2 rounded-full text-base md:text-base text-sm font-medium transition-all inline-flex items-center gap-2 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    Start Your Land Ownership Journey
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="md:w-5 md:h-5 w-4 h-4"><path d="M5 12h14m-7-7l7 7l-7 7"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative bg-[#EFEFE3] py-24 px-6" id="returns">
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply" style="background-image: url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h40v40H0V0zm1 1h38v38H1V1zm1 1v36h36V2H2z\' fill=\'%23183729\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E'); background-size: 20px 20px;"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16 aos-init" data-aos="fade-up">
+                <p class="text-sm uppercase tracking-widest font-bold mb-4 text-white bg-[#28a745] px-4 py-2 rounded-full inline-block">Financial Overview</p>
+                <h2 class="font-display text-4xl sm:text-5xl text-[#0F4229] tracking-tight">Returns &amp; Value</h2>
+                <p class="text-[#202525]/70 mt-4 text-lg max-w-2xl mx-auto">A secure asset class designed to work for you.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="relative bg-white rounded-3xl p-10 border-2 border-[#0F4229]/10 hover:border-[#D6B876] hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group aos-init overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#D6B876]/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#D6B876] to-[#B8935E] rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-[#0F4229] text-2xl font-bold font-display mb-4">Capital Appreciation</h3>
+                        <p class="text-[#202525]/70 leading-relaxed font-body">Benefit from the rapid increase in property value due to the area's strategic development, including the new airport and ring road.</p>
+                        <div class="w-12 h-1 bg-gradient-to-r from-[#D6B876] to-transparent mt-6 group-hover:w-24 transition-all duration-300"></div>
+                    </div>
+                </div>
+                <div class="relative bg-white rounded-3xl p-10 border-2 border-[#0F4229]/10 hover:border-[#D6B876] hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group aos-init overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#28a745]/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#28a745] to-[#20c997] rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-[#0F4229] text-2xl font-bold font-display mb-4">Food Security & Agri-Income</h3>
+                        <p class="text-[#202525]/70 leading-relaxed font-body">Utilize the fertile black cotton soil to grow crops for personal use or generate additional income through agriculture, with our expert support.</p>
+                        <div class="w-12 h-1 bg-gradient-to-r from-[#28a745] to-transparent mt-6 group-hover:w-24 transition-all duration-300"></div>
+                    </div>
+                </div>
+                <div class="relative bg-white rounded-3xl p-10 border-2 border-[#0F4229]/10 hover:border-[#D6B876] hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group aos-init overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#0F4229]/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-gradient-to-br from-[#0F4229] to-[#2a5a3f] rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-300 shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-[#0F4229] text-2xl font-bold font-display mb-4">A Tangible, Secure Asset</h3>
+                        <p class="text-[#202525]/70 leading-relaxed font-body">Unlike stocks or digital assets, land is a physical, tangible asset that you can see, use, and pass on to future generations.</p>
+                        <div class="w-12 h-1 bg-gradient-to-r from-[#0F4229] to-transparent mt-6 group-hover:w-24 transition-all duration-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#EFEFE3] py-24 px-6" id="trust">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 aos-init" data-aos="fade-up">
+                <p class="text-sm uppercase tracking-widest font-bold mb-4 text-white bg-[#28a745] px-4 py-2 rounded-full inline-block">Project Gallery</p>
+                <h2 class="font-display text-4xl sm:text-5xl text-[#0F4229] tracking-tight mb-6">Konkan Project Gallery</h2>
+                <p class="text-[#202525]/70 text-lg leading-relaxed">Explore the infrastructure, location advantages, and coastal beauty around our Konkan project.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[350px]">
+                
+                <div class="group relative md:col-span-2 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="img/konkan/Konkan-Coast_Kirty_Holiday_Pune.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Konkan Coast</h3>
+                        <p class="text-sm md:text-base text-stone-300 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 max-w-md">Beautiful coastal views along the Konkan region.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-1 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="img/konkan/Sindhudurg Fort Top View Kirty Holiday Pune.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl text-white mb-2 leading-tight">Sindhudurg Fort</h3>
+                        <p class="text-sm text-stone-300 font-medium leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Historic Sindhudurg sea fort - major tourist attraction.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-1 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="img/konkan/Ganpatipule-Temple-768x576-1.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl text-white mb-2 leading-tight">Ganpatipule Temple</h3>
+                        <p class="text-sm text-stone-300 font-medium leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Famous Ganpatipule temple and beach destination.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-2 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="img/konkan/Kelshi-Beach-768x576-1.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Kelshi Beach</h3>
+                        <p class="text-sm md:text-base text-stone-300 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Pristine Kelshi beach with crystal clear waters.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-1 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="img/konkan/Malvan.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl text-white mb-2 leading-tight">Malvan</h3>
+                        <p class="text-sm text-stone-300 font-medium leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Famous Malvan beach and water sports destination.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-2 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="img/konkan/Harnai-Murud.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Harnai-Murud</h3>
+                        <p class="text-sm md:text-base text-stone-300 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Beautiful Harnai-Murud coastal area with fishing villages.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-1 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="700">
+                    <img src="img/konkan/Sindhudurg-Fort.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl text-white mb-2 leading-tight">Sindhudurg Fort View</h3>
+                        <p class="text-sm text-stone-300 font-medium leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Another view of the historic Sindhudurg fort.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-1 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="800">
+                    <img src="img/konkan/Ratnagiri-768x576-1.jpeg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl text-white mb-2 leading-tight">Ratnagiri</h3>
+                        <p class="text-sm text-stone-300 font-medium leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Famous Ratnagiri - home of Alphonso mangoes.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-2 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="900">
+                    <img src="img/konkan/Prachin-Konkan-Museum-768x576-1.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Prachin Konkan Museum</h3>
+                        <p class="text-sm md:text-base text-stone-300 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Museum showcasing Konkan's rich cultural heritage.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-1 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="1000">
+                    <img src="img/konkan/Focus-on-Konkan-a_d.jpg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl text-white mb-2 leading-tight">Konkan Region</h3>
+                        <p class="text-sm text-stone-300 font-medium leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Beautiful Konkan region landscape and culture.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-2 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="1100">
+                    <img src="img/konkan/konkan_symphony_palms_phase_1-jalgaon_2-dapoli-konkan_vikas_development_company (1).avif" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Konkan Development</h3>
+                        <p class="text-sm md:text-base text-stone-300 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Growing real estate and tourism development in Konkan.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-1 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="1200">
+                    <img src="img/konkan/templae.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl text-white mb-2 leading-tight">Konkan Temple</h3>
+                        <p class="text-sm text-stone-300 font-medium leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Beautiful ancient temples in Konkan region.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-2 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="1300">
+                    <img src="img/konkan/aa-Cover.jpeg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Konkan Scenic Beauty</h3>
+                        <p class="text-sm md:text-base text-stone-300 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Breathtaking scenic views of Konkan coastline.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-1 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="1400">
+                    <img src="img/konkan/dc-Cover-.jpeg" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl text-white mb-2 leading-tight">Konkan Landscape</h3>
+                        <p class="text-sm text-stone-300 font-medium leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Beautiful landscape of Konkan region.</p>
+                    </div>
+                </div>
+
+                <div class="group relative md:col-span-2 overflow-hidden rounded-3xl shadow-lg cursor-pointer aos-init" data-aos="zoom-in" data-aos-delay="1500">
+                    <img src="img/konkan/costal.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
+                    <div class="absolute bottom-8 left-8 right-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="font-display text-2xl md:text-3xl text-white mb-2 leading-tight">Mumbai-Goa Highway</h3>
+                        <p class="text-sm md:text-base text-stone-300 font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Mumbai-Goa Highway connecting Konkan region with excellent infrastructure.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-light footer py-5 wow fadeIn"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-2 col-md-6">
+            <img src="img/LOGO/Greenspacess_Black BG Logo.png" alt="GREENSPACESS" style="height: 120px;" />
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-4">Head Office</h4>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3"></i>C/22 Deepmala CHS, Pimple
+              Saudagar, Pune 411027
+            </p>
+            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>7972258038</p>
+            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>7666090107</p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>greennspacess@gmail.com
+            </p>
+            <div class="d-flex pt-2">
+              <a
+                class="btn btn-square btn-outline-light rounded-circle me-2"
+                href=""
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-square btn-outline-light rounded-circle me-2"
+                href=""
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-square btn-outline-light rounded-circle me-2"
+                href=""
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                class="btn btn-square btn-outline-light rounded-circle me-2"
+                href=""
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-4">Our Services</h4>
+            <a class="btn btn-link" href="">Agriculture Land</a>
+            <a class="btn btn-link" href="">Farmhouse Plots</a>
+            <a class="btn btn-link" href="">Lake Touch Properties</a>
+            <a class="btn btn-link" href="">Legal Verification</a>
+            <a class="btn btn-link" href="">Investment Consultation</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-white mb-4">Quick Links</h4>
+            <a class="btn btn-link" href="">About Us</a>
+            <a class="btn btn-link" href="">Contact Us</a>
+            <a class="btn btn-link" href="">Our Services</a>
+            <a class="btn btn-link" href="">Terms & Condition</a>
+            <a class="btn btn-link" href="">Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; All Rights Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Design and Developed by
+            <a class="border-bottom" href="https://codesunny.in"
+              >codesunny.in</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a
+      href="#"
+      class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Lazy Loading Script -->
+    <script src="js/lazy-load.js"></script>
+    
+    <!-- Dropdown Toggle Script -->
+    <script src="js/dropdown.js"></script>
+    
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+        });
+    </script>
+
+</body>
+</html>
+
