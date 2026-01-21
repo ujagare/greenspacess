@@ -1301,7 +1301,7 @@
         <div
           class="container-fluid quote my-5 py-5"
           data-parallax="scroll"
-          data-image-src="img/cool coffe india.jpg"
+          data-image-src="img/cool-coffee-india-tea-leaves-forest.jpg"
         >
           <div class="container py-5">
             <div class="row justify-content-center">
@@ -1380,7 +1380,9 @@
         </div>
         <!-- Quote End -->
 
-        <!-- Projects Start -->
+        
+
+<!-- Projects Start -->
         <div class="container-xxl py-5">
           <div class="container">
             <div
@@ -2124,62 +2126,6 @@
         <!-- Dropdown Toggle Script -->
         <script src="js/dropdown.js"></script>
 
-        <!-- Lenis Smooth Scroll Initialization -->
-        <script>
-          // Initialize Lenis
-          const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            direction: "vertical",
-            gestureDirection: "vertical",
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
-            touchMultiplier: 2,
-            infinite: false,
-          });
-
-          // Lenis animation frame
-          function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          }
-          requestAnimationFrame(raf);
-
-          // Integrate Lenis with GSAP ScrollTrigger
-          lenis.on("scroll", ScrollTrigger.update);
-
-          gsap.ticker.add((time) => {
-            lenis.raf(time * 1000);
-          });
-
-          gsap.ticker.lagSmoothing(0);
-
-          // Handle anchor links smoothly
-          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
-              e.preventDefault();
-              const target = document.querySelector(this.getAttribute("href"));
-              if (target) {
-                lenis.scrollTo(target, {
-                  offset: 0,
-                  duration: 1.2,
-                });
-              }
-            });
-          });
-
-          // Stop Lenis during Bootstrap carousel transitions
-          const carousel = document.querySelector("#header-carousel");
-          if (carousel) {
-            carousel.addEventListener("slide.bs.carousel", function () {
-              lenis.stop();
-            });
-            carousel.addEventListener("slid.bs.carousel", function () {
-              lenis.start();
-            });
-          }
-        </script>
       </div>
       <!-- data-barba="container" -->
     </div>
