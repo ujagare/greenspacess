@@ -270,6 +270,8 @@
 </head>
 
 <body>
+  <div data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="about">
     
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -726,6 +728,15 @@
     
     <!-- Dropdown Toggle Script -->
     <script src="js/dropdown.js"></script>
+
+    </div><!-- data-barba="container" -->
+  </div><!-- data-barba="wrapper" -->
+
+  <!-- Barba.js for smooth page transitions -->
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/barba-init.js"></script>
+
 </body>
 
 </html>

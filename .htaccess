@@ -170,6 +170,17 @@ Options -Indexes
   Deny from all
 </Files>
 
+# Protect PHP files from direct access (except send-email.php)
+<FilesMatch "\.php$">
+  Order Deny,Allow
+  Deny from all
+</FilesMatch>
+
+<Files "send-email.php">
+  Order Allow,Deny
+  Allow from all
+</Files>
+
 # Protect sensitive files
 <FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
   Order allow,deny
@@ -182,6 +193,37 @@ Options -Indexes
   Order allow,deny
   Deny from all
 </FilesMatch>
+
+# Protect logs directory
+<DirectoryMatch "^.*/logs/">
+  Order deny,allow
+  Deny from all
+</DirectoryMatch>
+
+# Rate limiting for form submissions (requires mod_ratelimit)
+<IfModule mod_ratelimit.c>
+  <Location "/send-email.php">
+    SetOutputFilter RATE_LIMIT
+    SetEnv rate-limit 400
+  </Location>
+</IfModule>
+
+# Block suspicious requests
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Block SQL injection attempts
+  RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+  RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+  RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+  RewriteRule ^(.*)$ - [F,L]
+  
+  # Block file injection attempts
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC]
+  RewriteRule ^(.*)$ - [F,L]
+</IfModule>
 
 # Prevent image hotlinking (Uncomment and update domain)
 # RewriteCond %{HTTP_REFERER} !^$
