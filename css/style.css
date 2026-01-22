@@ -136,12 +136,14 @@ h6,
 .navbar.sticky-top {
   top: -100px;
   transition: 0.5s;
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.85), rgba(139, 195, 74, 0.85), rgba(205, 220, 57, 0.85)) !important;
+  backdrop-filter: blur(10px);
   z-index: 1020;
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.85), rgba(139, 195, 74, 0.85), rgba(205, 220, 57, 0.85)) !important;
+  backdrop-filter: blur(10px);
   z-index: 1020;
 }
 
@@ -152,15 +154,16 @@ h6,
 .navbar .navbar-nav .nav-link {
   margin-right: 35px;
   padding: 25px 0;
-  color: var(--dark);
+  color: #ffffff;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   outline: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-  color: var(--primary);
+  color: #ffeb3b;
 }
 
 .navbar .dropdown-toggle::after {
@@ -191,6 +194,8 @@ h6,
     margin: 4px 0;
     transition: all 0.3s ease;
     position: relative;
+    color: #0f4229 !important;
+    text-shadow: none !important;
   }
 
   .navbar .navbar-nav .nav-link:hover {
@@ -219,7 +224,7 @@ h6,
   .navbar .navbar-nav {
     border-top: 1px solid #e8f5e9;
     padding: 15px 10px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.98) !important;
     border-radius: 0 0 12px 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
@@ -775,7 +780,10 @@ h3,
     padding-bottom: 2rem !important;
   }
   .footer .row {
-    align-items: center;
+    align-items: flex-start;
+  }
+  .footer .d-flex.pt-2 {
+    margin-top: 15px !important;
   }
 }
 
@@ -1263,9 +1271,16 @@ h3,
     width: 32px !important;
     height: 32px !important;
     padding: 0 !important;
+    margin-top: 10px !important;
   }
 
   .footer .btn-square i {
     font-size: 14px !important;
   }
+}
+
+
+/* Footer Heading Size Increase for Project Pages */
+.footer h4.text-white {
+  font-size: 1.5rem !important;
 }

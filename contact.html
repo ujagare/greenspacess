@@ -89,16 +89,61 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/dropdown.css" rel="stylesheet" />
+    
+    <!-- Toast Notification Styles -->
     <style>
+      .toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+      }
+      .custom-toast {
+        min-width: 300px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        animation: slideIn 0.4s ease;
+      }
+      .custom-toast.success {
+        border-left: 5px solid #28a745;
+      }
+      .custom-toast.danger {
+        border-left: 5px solid #dc3545;
+      }
+      .custom-toast .toast-header {
+        background: #28a745;
+        color: white;
+        border-radius: 12px 12px 0 0;
+        font-weight: 600;
+      }
+      .custom-toast.danger .toast-header {
+        background: #dc3545;
+      }
+      .custom-toast .toast-body {
+        padding: 20px;
+        font-size: 15px;
+      }
+      @keyframes slideIn {
+        from { transform: translateX(400px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
       .brand-typo {
         height: 18px;
         vertical-align: middle;
         display: inline-block;
       }
+      .footer h4.text-white {
+        display: inline-block;
+        white-space: nowrap;
+      }
     </style>
   </head>
 
   <body>
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+    
     <div data-barba="wrapper">
       <div data-barba="container" data-barba-namespace="contact">
         <!-- Mobile Back Arrow -->
@@ -533,9 +578,9 @@
               </div>
               <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Head Office</h4>
-                <p class="mb-2">
-                  <i class="fa fa-map-marker-alt me-3"></i>C/22 Deepmala CHS,
-                  Pimple Saudagar, Pune 411027
+                <p class="mb-2" style="display: flex; align-items: flex-start;">
+                  <i class="fa fa-map-marker-alt me-3" style="margin-top: 3px;"></i>
+                  <span>C/22 Deepmala CHS, Pimple<br>Saudagar, Pune 411027</span>
                 </p>
                 <p class="mb-2">
                   <i class="fa fa-phone-alt me-3"></i>7972258038

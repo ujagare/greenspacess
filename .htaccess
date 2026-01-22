@@ -170,16 +170,11 @@ Options -Indexes
   Deny from all
 </Files>
 
-# Protect PHP files from direct access (except send-email.php)
+# Protect PHP files from direct access
 <FilesMatch "\.php$">
   Order Deny,Allow
   Deny from all
 </FilesMatch>
-
-<Files "send-email.php">
-  Order Allow,Deny
-  Allow from all
-</Files>
 
 # Protect sensitive files
 <FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
@@ -200,13 +195,7 @@ Options -Indexes
   Deny from all
 </DirectoryMatch>
 
-# Rate limiting for form submissions (requires mod_ratelimit)
-<IfModule mod_ratelimit.c>
-  <Location "/send-email.php">
-    SetOutputFilter RATE_LIMIT
-    SetEnv rate-limit 400
-  </Location>
-</IfModule>
+# Rate limiting removed - using FormSubmit.co for contact form
 
 # Block suspicious requests
 <IfModule mod_rewrite.c>
@@ -297,14 +286,9 @@ Options -Indexes
 
 
 # ============================================
-# PHP SETTINGS (If using PHP)
+# NO PHP REQUIRED
+# Contact form uses FormSubmit.co
 # ============================================
-# <IfModule mod_php7.c>
-#   php_value upload_max_filesize 64M
-#   php_value post_max_size 64M
-#   php_value max_execution_time 300
-#   php_value max_input_time 300
-# </IfModule>
 
 
 # ============================================

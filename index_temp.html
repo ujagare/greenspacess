@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
@@ -95,7 +95,7 @@
 
     <!-- Favicon -->
     <link
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ðŸŒ±</text></svg>"
       rel="icon"
     />
 
@@ -132,54 +132,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-
-    <!-- Footer Heading Alignment -->
-    <style>
-      .footer h4.text-white {
-        display: inline-block;
-        white-space: nowrap;
-      }
-    </style>
-
-    <!-- Toast Notification Styles -->
-    <style>
-      .toast-container {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 9999;
-      }
-      .custom-toast {
-        min-width: 300px;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        animation: slideIn 0.4s ease;
-      }
-      .custom-toast.success {
-        border-left: 5px solid #28a745;
-      }
-      .custom-toast.danger {
-        border-left: 5px solid #dc3545;
-      }
-      .custom-toast .toast-header {
-        background: #28a745;
-        color: white;
-        border-radius: 12px 12px 0 0;
-        font-weight: 600;
-      }
-      .custom-toast.danger .toast-header {
-        background: #dc3545;
-      }
-      .custom-toast .toast-body {
-        padding: 20px;
-        font-size: 15px;
-      }
-      @keyframes slideIn {
-        from { transform: translateX(400px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-      }
-    </style>
 
     <!-- Custom Button Styles -->
     <style>
@@ -465,7 +417,7 @@
             "name": "Khed"
           }
         ],
-        "priceRange": "₹₹₹",
+        "priceRange": "â‚¹â‚¹â‚¹",
         "sameAs": [
           "https://www.facebook.com/greenspacess",
           "https://www.instagram.com/greenspacess",
@@ -476,9 +428,6 @@
   </head>
 
   <body>
-    <!-- Toast Notification Container -->
-    <div class="toast-container" id="toastContainer"></div>
-
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -1349,135 +1298,6 @@
         <!-- Service End -->
 
         <!-- Quote Start -->
-        <div
-          class="container-fluid quote my-5 py-5"
-          data-parallax="scroll"
-          data-image-src="img/cool-coffee-india-tea-leaves-forest.jpg"
-        >
-          <div class="container py-5">
-            <div class="row justify-content-center">
-              <div class="col-lg-7">
-                <div
-                  class="bg-white rounded p-4 p-sm-5 wow fadeIn"
-                  data-wow-delay="0.5s"
-                >
-                  <h1 class="display-5 text-center mb-5">Get A Free Quote</h1>
-                  
-                  <!-- Form Message -->
-                  <div id="homeFormMessage" class="alert d-none" role="alert"></div>
-                  
-                  <form 
-                    id="homeContactForm" 
-                    method="POST"
-                    novalidate
-                  >
-                    <!-- Hidden fields for email service -->
-                    <input type="hidden" name="_subject" value="New Quote Request from GREENSPACESS Website!" />
-                    <input type="hidden" name="_template" value="table" />
-                    
-                    <!-- Honeypot for spam protection -->
-                    <input type="text" name="_honey" style="display:none" />
-                    
-                    <div class="row g-3">
-                      <div class="col-sm-6">
-                        <div class="form-floating">
-                          <input
-                            type="text"
-                            class="form-control bg-light border-0"
-                            id="name"
-                            name="name"
-                            placeholder="Your Name"
-                            required
-                            minlength="2"
-                            maxlength="50"
-                          />
-                          <label for="name">Your Name</label>
-                          <div class="invalid-feedback">Please enter your name</div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-floating">
-                          <input
-                            type="email"
-                            class="form-control bg-light border-0"
-                            id="email"
-                            name="email"
-                            placeholder="Your Email"
-                            required
-                            pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
-                          />
-                          <label for="email">Your Email</label>
-                          <div class="invalid-feedback">Please enter a valid email</div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-floating">
-                          <input
-                            type="tel"
-                            class="form-control bg-light border-0"
-                            id="phone"
-                            name="phone"
-                            placeholder="Your Mobile"
-                            required
-                            pattern="[0-9]{10}"
-                            maxlength="10"
-                          />
-                          <label for="phone">Your Mobile</label>
-                          <div class="invalid-feedback">Please enter 10-digit mobile number</div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-floating">
-                          <select
-                            class="form-select bg-light border-0"
-                            id="service"
-                            name="service"
-                            required
-                          >
-                            <option value="" selected disabled>Select Service</option>
-                            <option value="Agriculture Land">Agriculture Land</option>
-                            <option value="Farmhouse Plots">Farmhouse Plots</option>
-                            <option value="Lake Touch Properties">Lake Touch Properties</option>
-                            <option value="Legal Verification">Legal Verification</option>
-                            <option value="Investment Consultation">Investment Consultation</option>
-                            <option value="Site Development">Site Development</option>
-                          </select>
-                          <label for="service">Service Type</label>
-                          <div class="invalid-feedback">Please select a service</div>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-floating">
-                          <textarea
-                            class="form-control bg-light border-0"
-                            placeholder="Leave a message here"
-                            id="message"
-                            name="message"
-                            style="height: 100px"
-                            minlength="10"
-                            maxlength="500"
-                          ></textarea>
-                          <label for="message">Message (Optional)</label>
-                          <div class="invalid-feedback">Message should be at least 10 characters</div>
-                        </div>
-                      </div>
-                      <div class="col-12 text-center">
-                        <button 
-                          class="btn btn-primary py-3 px-4" 
-                          type="submit"
-                          id="homeSubmitBtn"
-                        >
-                          <span class="btn-text">Submit Now</span>
-                          <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- Quote End -->
 
         
@@ -2115,9 +1935,9 @@
               </div>
               <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Head Office</h4>
-                <p class="mb-2" style="display: flex; align-items: flex-start;">
-                  <i class="fa fa-map-marker-alt me-3" style="margin-top: 3px;"></i>
-                  <span>C/22 Deepmala CHS, Pimple<br>Saudagar, Pune 411027</span>
+                <p class="mb-2">
+                  <i class="fa fa-map-marker-alt me-3"></i>C/22 Deepmala CHS,
+                  Pimple Saudagar, Pune 411027
                 </p>
                 <p class="mb-2">
                   <i class="fa fa-phone-alt me-3"></i>7972258038
