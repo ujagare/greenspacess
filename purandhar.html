@@ -47,6 +47,9 @@
 <link href="css/style.css" rel="stylesheet" />
 <link href="css/dropdown.css" rel="stylesheet" />
 
+<!-- Dock Stylesheet -->
+<link href="css/dock.css" rel="stylesheet" />
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
@@ -1003,32 +1006,25 @@ body .navbar-collapse {
             <p class="mb-2">
               <i class="fa fa-envelope me-3"></i>greennspacess@gmail.com
             </p>
-            <div class="d-flex pt-2">
-              <a
-                class="btn btn-square btn-outline-light rounded-circle me-2"
-                href="https://www.facebook.com/greenspacess"
-                target="_blank"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a
-                class="btn btn-square btn-outline-light rounded-circle me-2"
-                href="https://wa.me/917972258038"
-                target="_blank"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
-              <a
-                class="btn btn-square btn-outline-light rounded-circle me-2"
-                href="https://youtube.com/@greenspacess?si=P3d9GFSPGGCNbOlE"
-                target="_blank"
-                ><i class="fab fa-youtube"></i
-              ></a>
-              <a
-                class="btn btn-square btn-outline-light rounded-circle me-2"
-                href="https://www.instagram.com/greenspacess_land?igsh=MWpzb2E4ejFlcDMxbQ=="
-                target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
+            <div class="d-flex gap-2 pt-3">
+              <a class="btn btn-primary rounded-circle footer-social-icon" href="https://wa.me/917972258038" target="_blank" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a class="btn btn-primary rounded-circle footer-social-icon" href="https://www.facebook.com/greenspacess" target="_blank" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="btn btn-primary rounded-circle footer-social-icon" href="https://youtube.com/@greenspacess?si=P3d9GFSPGGCNbOlE" target="_blank" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a class="btn btn-primary rounded-circle footer-social-icon" href="https://www.instagram.com/greenspacess_land?igsh=MWpzb2E4ejFlcDMxbQ==" target="_blank" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
+            <style>
+              .footer-social-icon:hover {
+                transform: scale(1.3);
+              }
+            </style>
           </div>
           <div class="col-lg-3 col-md-6">
             <h4 class="text-white mb-4">Our Services</h4>
@@ -1117,6 +1113,9 @@ body .navbar-collapse {
   <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="js/barba-init.js"></script>
+  
+  <!-- Dock Component -->
+  <script src="js/dock.js"></script>
 
 </body>
 </html>
