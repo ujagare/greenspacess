@@ -1,0 +1,25 @@
+{
+  "name": "greenspaces-website",
+  "version": "1.0.0",
+  "description": "Premium Land Projects Website",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+    "testMatch": ["**/__tests__/**/*.test.js"],
+    "collectCoverageFrom": [
+      "js/**/*.js",
+      "!js/vendor/**"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^9.3.4",
+    "@testing-library/jest-dom": "^6.1.5",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

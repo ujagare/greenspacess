@@ -2,39 +2,70 @@
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
     </script>
     <!-- End Google Analytics -->
 
     <!-- Facebook Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'YOUR_PIXEL_ID');
-      fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "YOUR_PIXEL_ID");
+      fbq("track", "PageView");
     </script>
     <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+      />
     </noscript>
     <!-- End Facebook Pixel Code -->
     <meta charset="utf-8" />
@@ -153,7 +184,7 @@
         min-width: 300px;
         background: white;
         border-radius: 12px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         animation: slideIn 0.4s ease;
       }
       .custom-toast.success {
@@ -176,8 +207,14 @@
         font-size: 15px;
       }
       @keyframes slideIn {
-        from { transform: translateX(400px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
       }
     </style>
 
@@ -480,8 +517,14 @@
     <div class="toast-container" id="toastContainer"></div>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div data-barba="wrapper">
       <div data-barba="container" data-barba-namespace="home">
@@ -1362,22 +1405,26 @@
                   data-wow-delay="0.5s"
                 >
                   <h1 class="display-5 text-center mb-5">Get A Free Quote</h1>
-                  
+
                   <!-- Form Message -->
-                  <div id="homeFormMessage" class="alert d-none" role="alert"></div>
-                  
-                  <form 
-                    id="homeContactForm" 
-                    method="POST"
-                    novalidate
-                  >
+                  <div
+                    id="homeFormMessage"
+                    class="alert d-none"
+                    role="alert"
+                  ></div>
+
+                  <form id="homeContactForm" method="POST" novalidate>
                     <!-- Hidden fields for email service -->
-                    <input type="hidden" name="_subject" value="New Quote Request from GREENSPACESS Website!" />
+                    <input
+                      type="hidden"
+                      name="_subject"
+                      value="New Quote Request from GREENSPACESS Website!"
+                    />
                     <input type="hidden" name="_template" value="table" />
-                    
+
                     <!-- Honeypot for spam protection -->
-                    <input type="text" name="_honey" style="display:none" />
-                    
+                    <input type="text" name="_honey" style="display: none" />
+
                     <div class="row g-3">
                       <div class="col-sm-6">
                         <div class="form-floating">
@@ -1392,7 +1439,9 @@
                             maxlength="50"
                           />
                           <label for="name">Your Name</label>
-                          <div class="invalid-feedback">Please enter your name</div>
+                          <div class="invalid-feedback">
+                            Please enter your name
+                          </div>
                         </div>
                       </div>
                       <div class="col-sm-6">
@@ -1407,7 +1456,9 @@
                             pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
                           />
                           <label for="email">Your Email</label>
-                          <div class="invalid-feedback">Please enter a valid email</div>
+                          <div class="invalid-feedback">
+                            Please enter a valid email
+                          </div>
                         </div>
                       </div>
                       <div class="col-sm-6">
@@ -1423,7 +1474,9 @@
                             maxlength="10"
                           />
                           <label for="phone">Your Mobile</label>
-                          <div class="invalid-feedback">Please enter 10-digit mobile number</div>
+                          <div class="invalid-feedback">
+                            Please enter 10-digit mobile number
+                          </div>
                         </div>
                       </div>
                       <div class="col-sm-6">
@@ -1434,16 +1487,32 @@
                             name="service"
                             required
                           >
-                            <option value="" selected disabled>Select Service</option>
-                            <option value="Agriculture Land">Agriculture Land</option>
-                            <option value="Farmhouse Plots">Farmhouse Plots</option>
-                            <option value="Lake Touch Properties">Lake Touch Properties</option>
-                            <option value="Legal Verification">Legal Verification</option>
-                            <option value="Investment Consultation">Investment Consultation</option>
-                            <option value="Site Development">Site Development</option>
+                            <option value="" selected disabled>
+                              Select Service
+                            </option>
+                            <option value="Agriculture Land">
+                              Agriculture Land
+                            </option>
+                            <option value="Farmhouse Plots">
+                              Farmhouse Plots
+                            </option>
+                            <option value="Lake Touch Properties">
+                              Lake Touch Properties
+                            </option>
+                            <option value="Legal Verification">
+                              Legal Verification
+                            </option>
+                            <option value="Investment Consultation">
+                              Investment Consultation
+                            </option>
+                            <option value="Site Development">
+                              Site Development
+                            </option>
                           </select>
                           <label for="service">Service Type</label>
-                          <div class="invalid-feedback">Please select a service</div>
+                          <div class="invalid-feedback">
+                            Please select a service
+                          </div>
                         </div>
                       </div>
                       <div class="col-12">
@@ -1458,17 +1527,23 @@
                             maxlength="500"
                           ></textarea>
                           <label for="message">Message (Optional)</label>
-                          <div class="invalid-feedback">Message should be at least 10 characters</div>
+                          <div class="invalid-feedback">
+                            Message should be at least 10 characters
+                          </div>
                         </div>
                       </div>
                       <div class="col-12 text-center">
-                        <button 
-                          class="btn btn-primary py-3 px-4" 
+                        <button
+                          class="btn btn-primary py-3 px-4"
                           type="submit"
                           id="homeSubmitBtn"
                         >
                           <span class="btn-text">Submit Now</span>
-                          <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                          <span
+                            class="spinner-border spinner-border-sm d-none"
+                            role="status"
+                            aria-hidden="true"
+                          ></span>
                         </button>
                       </div>
                     </div>
@@ -1480,9 +1555,7 @@
         </div>
         <!-- Quote End -->
 
-        
-
-<!-- Projects Start -->
+        <!-- Projects Start -->
         <div class="container-xxl py-5">
           <div class="container">
             <div
@@ -1661,309 +1734,180 @@
               style="max-width: 600px"
             >
               <p class="fs-5 fw-bold text-primary">Our Team</p>
-              <h1 class="display-5 mb-5">Meet Our Team</h1>
-              <p>
+              <h1 class="display-5 mb-3">Meet Our Team</h1>
+              <p class="mb-5">
                 Dedicated professionals committed to your land investment
                 success
               </p>
             </div>
 
-            <div class="row g-4 justify-content-center">
-              <!-- Team Member 1 -->
-              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <!-- Team Member 1 -->
+            <div
+              class="row g-4 align-items-center mb-5 wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
+              <div class="col-lg-5">
                 <div
-                  class="team-card bg-white border rounded-3 p-4 h-100"
-                  style="transition: all 0.3s ease"
+                  style="
+                    border-radius: 15px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                  "
                 >
-                  <div
-                    class="team-image mb-3"
-                    style="
-                      height: 250px;
-                      border-radius: 10px;
-                      overflow: hidden;
-                      background: #e9ecef;
-                    "
-                  >
-                    <img
-                      loading="lazy"
-                      class="img-fluid w-100 h-100"
-                      style="object-fit: cover"
-                      src="img/testo1.png"
-                      alt="Rajesh Kumar"
-                    />
-                  </div>
-                  <div class="team-content text-center">
-                    <h4 class="mb-2" style="color: #0f4229; font-weight: bold">
-                      Rajesh Kumar
-                    </h4>
-                    <p
-                      class="text-primary fw-semibold mb-3"
-                      style="font-size: 0.95rem"
-                    >
-                      Founder & CEO
-                    </p>
-                    <p
-                      class="text-muted mb-3"
-                      style="font-size: 0.9rem; line-height: 1.6"
-                    >
-                      With over 15 years of experience in real estate and
-                      agriculture land development, Rajesh leads our team with
-                      vision and expertise.
-                    </p>
-                    <div
-                      class="team-social d-flex justify-content-center gap-2"
-                    >
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="mailto:rajesh@greenspacess.com"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i class="fas fa-envelope" style="color: #0f4229"></i>
-                      </a>
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="tel:+917972258038"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i class="fas fa-phone" style="color: #0f4229"></i>
-                      </a>
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="#"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i
-                          class="fab fa-linkedin-in"
-                          style="color: #0f4229"
-                        ></i>
-                      </a>
-                    </div>
-                  </div>
+                  <img
+                    loading="lazy"
+                    class="img-fluid w-100"
+                    style="object-fit: cover; object-position: top"
+                    src="img/Profile/Avinash1.jpg"
+                    alt="Mr. Avi R."
+                  />
                 </div>
               </div>
-
-              <!-- Team Member 2 -->
-              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div
-                  class="team-card bg-white border rounded-3 p-4 h-100"
-                  style="transition: all 0.3s ease"
-                >
-                  <div
-                    class="team-image mb-3"
-                    style="
-                      height: 250px;
-                      border-radius: 10px;
-                      overflow: hidden;
-                      background: #e9ecef;
-                    "
+              <div class="col-lg-7">
+                <div class="ps-lg-4">
+                  <h3
+                    class="mb-3"
+                    style="color: #0f4229; font-weight: bold; font-size: 2rem"
                   >
-                    <img
-                      loading="lazy"
-                      class="img-fluid w-100 h-100"
-                      style="object-fit: cover"
-                      src="img/testo2.png"
-                      alt="Priya Sharma"
-                    />
-                  </div>
-                  <div class="team-content text-center">
-                    <h4 class="mb-2" style="color: #0f4229; font-weight: bold">
-                      Priya Sharma
-                    </h4>
-                    <p
-                      class="text-primary fw-semibold mb-3"
-                      style="font-size: 0.95rem"
-                    >
-                      Legal & Documentation Head
-                    </p>
-                    <p
-                      class="text-muted mb-3"
-                      style="font-size: 0.9rem; line-height: 1.6"
-                    >
-                      Priya ensures all our land transactions are legally
-                      verified and transparent. Her expertise guarantees clear
-                      title and hassle-free documentation.
-                    </p>
-                    <div
-                      class="team-social d-flex justify-content-center gap-2"
-                    >
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="mailto:priya@greenspacess.com"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i class="fas fa-envelope" style="color: #0f4229"></i>
-                      </a>
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="tel:+917666090107"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i class="fas fa-phone" style="color: #0f4229"></i>
-                      </a>
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="#"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i
-                          class="fab fa-linkedin-in"
-                          style="color: #0f4229"
-                        ></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Team Member 3 -->
-              <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div
-                  class="team-card bg-white border rounded-3 p-4 h-100"
-                  style="transition: all 0.3s ease"
-                >
-                  <div
-                    class="team-image mb-3"
-                    style="
-                      height: 250px;
-                      border-radius: 10px;
-                      overflow: hidden;
-                      background: #e9ecef;
-                    "
+                    Mr. Avi R.
+                  </h3>
+                  <p
+                    class="text-primary fw-semibold mb-3"
+                    style="font-size: 1.3rem"
                   >
-                    <img
-                      loading="lazy"
-                      class="img-fluid w-100 h-100"
-                      style="object-fit: cover"
-                      src="img/testo3.png"
-                      alt="Amit Deshmukh"
-                    />
-                  </div>
-                  <div class="team-content text-center">
-                    <h4 class="mb-2" style="color: #0f4229; font-weight: bold">
-                      Amit Deshmukh
-                    </h4>
-                    <p
-                      class="text-primary fw-semibold mb-3"
-                      style="font-size: 0.95rem"
+                    Managing Partner & Lifestyle Coach
+                  </p>
+                  <p
+                    class="text-muted mb-4"
+                    style="font-size: 1.1rem; line-height: 1.8"
+                  >
+                    A farmland estate consultant with expertise in agricultural
+                    property advisory, market analysis, and sustainable land
+                    utilisation. He works with clients to align lifestyle goals
+                    and well-being with smart land investment and development
+                    strategies. With international experience in recreational
+                    and lifestyle space planning, he specialises in converting
+                    raw or underutilised land into productive agricultural,
+                    leisure, and hospitality-ready spaces. He also advocates
+                    modular and prefabricated housing solutions, delivering
+                    Airbnb-style developments in and around Pune with a focus on
+                    functionality, scalability, and modern living.
+                  </p>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="btn btn-primary rounded-circle"
+                      href="mailto:greennspacess@gmail.com"
+                      style="
+                        width: 45px;
+                        height: 45px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
                     >
-                      Project Development Manager
-                    </p>
-                    <p
-                      class="text-muted mb-3"
-                      style="font-size: 0.9rem; line-height: 1.6"
+                      <i class="fas fa-envelope"></i>
+                    </a>
+                    <a
+                      class="btn btn-primary rounded-circle"
+                      href="tel:+917972258038"
+                      style="
+                        width: 45px;
+                        height: 45px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
                     >
-                      Amit oversees all our land development projects, ensuring
-                      quality infrastructure and timely delivery. His
-                      agricultural expertise helps clients maximize potential.
-                    </p>
-                    <div
-                      class="team-social d-flex justify-content-center gap-2"
-                    >
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="mailto:amit@greenspacess.com"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i class="fas fa-envelope" style="color: #0f4229"></i>
-                      </a>
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="tel:+917972258038"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i class="fas fa-phone" style="color: #0f4229"></i>
-                      </a>
-                      <a
-                        class="btn btn-square rounded-2"
-                        href="#"
-                        style="
-                          width: 40px;
-                          height: 40px;
-                          background: #f0f0f0;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                        "
-                      >
-                        <i
-                          class="fab fa-linkedin-in"
-                          style="color: #0f4229"
-                        ></i>
-                      </a>
-                    </div>
+                      <i class="fas fa-phone"></i>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <style>
-              .team-card:hover {
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
-                transform: translateY(-5px);
-              }
-              .team-social a:hover {
-                background: #348e38 !important;
-              }
-              .team-social a:hover i {
-                color: white !important;
-              }
-            </style>
+            <!-- Team Member 2 -->
+            <div
+              class="row g-4 align-items-center wow fadeInUp"
+              data-wow-delay="0.3s"
+            >
+              <div class="col-lg-7 order-lg-1 order-2">
+                <div class="pe-lg-4">
+                  <h3
+                    class="mb-3"
+                    style="color: #0f4229; font-weight: bold; font-size: 2rem"
+                  >
+                    Mr. Shikilash Panchal
+                  </h3>
+                  <p
+                    class="text-primary fw-semibold mb-3"
+                    style="font-size: 1.3rem"
+                  >
+                    Managing Partner
+                  </p>
+                  <p
+                    class="text-muted mb-4"
+                    style="font-size: 1.1rem; line-height: 1.8"
+                  >
+                    We are a professionally managed land development firm led by
+                    Mr Shikilash Panchal, Managing Partner, with over 15 years
+                    of experience in land acquisition, agricultural land
+                    development, and strategic investment planning. We
+                    specialise in developing sustainable farm properties,
+                    agricultural plots, and resort-ready land parcels, offering
+                    end-to-end solutions from land sourcing and legal due
+                    diligence to planning, construction, and final delivery.
+                    Guided by ethical practices and regulatory expertise, we
+                    focus on creating land assets that deliver long-term value,
+                    functionality, and sustainable growth for our clients.
+                  </p>
+                  <div class="d-flex gap-3">
+                    <a
+                      class="btn btn-primary rounded-circle"
+                      href="mailto:greennspacess@gmail.com"
+                      style="
+                        width: 45px;
+                        height: 45px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <i class="fas fa-envelope"></i>
+                    </a>
+                    <a
+                      class="btn btn-primary rounded-circle"
+                      href="tel:+917666090107"
+                      style="
+                        width: 45px;
+                        height: 45px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      "
+                    >
+                      <i class="fas fa-phone"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 order-lg-2 order-1">
+                <div
+                  style="
+                    border-radius: 15px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                  "
+                >
+                  <img
+                    loading="lazy"
+                    class="img-fluid w-100"
+                    style="object-fit: cover; object-position: top"
+                    src="img/Profile/Mr. Shiv.jpg"
+                    alt="Mr. Shikilash Panchal"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Team End -->
@@ -2115,9 +2059,14 @@
               </div>
               <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Head Office</h4>
-                <p class="mb-2" style="display: flex; align-items: flex-start;">
-                  <i class="fa fa-map-marker-alt me-3" style="margin-top: 3px;"></i>
-                  <span>C/22 Deepmala CHS, Pimple<br>Saudagar, Pune 411027</span>
+                <p class="mb-2" style="display: flex; align-items: flex-start">
+                  <i
+                    class="fa fa-map-marker-alt me-3"
+                    style="margin-top: 3px"
+                  ></i>
+                  <span
+                    >C/22 Deepmala CHS, Pimple<br />Saudagar, Pune 411027</span
+                  >
                 </p>
                 <p class="mb-2">
                   <i class="fa fa-phone-alt me-3"></i>7972258038
@@ -2131,23 +2080,27 @@
                 <div class="d-flex pt-2">
                   <a
                     class="btn btn-square btn-outline-light rounded-circle me-2"
-                    href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a
-                    class="btn btn-square btn-outline-light rounded-circle me-2"
-                    href=""
+                    href="https://www.facebook.com/greenspacess"
+                    target="_blank"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
                   <a
                     class="btn btn-square btn-outline-light rounded-circle me-2"
-                    href=""
+                    href="https://wa.me/917972258038"
+                    target="_blank"
+                    ><i class="fab fa-whatsapp"></i
+                  ></a>
+                  <a
+                    class="btn btn-square btn-outline-light rounded-circle me-2"
+                    href="https://youtube.com/@greenspacess?si=P3d9GFSPGGCNbOlE"
+                    target="_blank"
                     ><i class="fab fa-youtube"></i
                   ></a>
                   <a
                     class="btn btn-square btn-outline-light rounded-circle me-2"
-                    href=""
-                    ><i class="fab fa-linkedin-in"></i
+                    href="https://www.instagram.com/greenspacess_land?igsh=MWpzb2E4ejFlcDMxbQ=="
+                    target="_blank"
+                    ><i class="fab fa-instagram"></i
                   ></a>
                 </div>
               </div>
@@ -2225,7 +2178,6 @@
 
         <!-- Dropdown Toggle Script -->
         <script src="js/dropdown.js"></script>
-
       </div>
       <!-- data-barba="container" -->
     </div>
@@ -2236,8 +2188,6 @@
 
     <!-- GSAP - Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-        
 
     <!-- Barba.js Initialization -->
     <script src="js/barba-init.js"></script>

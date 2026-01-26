@@ -148,12 +148,14 @@
       form.target = 'hidden_iframe';
       form.action = 'https://formsubmit.co/greennspacess@gmail.com';
 
-      // Add hidden fields
-      const captchaField = document.createElement('input');
-      captchaField.type = 'hidden';
-      captchaField.name = '_captcha';
-      captchaField.value = 'false';
-      form.appendChild(captchaField);
+      // Add hidden fields if not already present
+      if (!form.querySelector('input[name="_captcha"]')) {
+        const captchaField = document.createElement('input');
+        captchaField.type = 'hidden';
+        captchaField.name = '_captcha';
+        captchaField.value = 'false';
+        form.appendChild(captchaField);
+      }
 
       // Submit form
       form.submit();
