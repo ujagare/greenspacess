@@ -165,7 +165,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    
+
     <!-- Dock Stylesheet -->
     <link href="css/dock.css" rel="stylesheet" />
 
@@ -220,6 +220,53 @@
           transform: translateX(0);
           opacity: 1;
         }
+      }
+    </style>
+
+    <!-- Carousel Text Animation Styles -->
+    <style>
+      /* Fix carousel white space issue */
+      #header-carousel {
+        margin-bottom: 0 !important;
+        overflow: hidden;
+      }
+
+      #header-carousel .carousel-inner,
+      #header-carousel .carousel-item {
+        margin-bottom: 0 !important;
+      }
+
+      #header-carousel .carousel-item video,
+      #header-carousel .carousel-item img {
+        display: block;
+        margin-bottom: 0 !important;
+      }
+
+      /* Custom slide down animation that keeps text visible */
+      @keyframes customSlideInDown {
+        0% {
+          opacity: 0;
+          transform: translate3d(0, -100%, 0);
+          visibility: visible;
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+          visibility: visible;
+        }
+      }
+
+      /* Initially hide carousel text */
+      .carousel-text-animate {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      /* Animate and keep visible */
+      .carousel-text-animate.animate-now {
+        animation: customSlideInDown 1s ease-out forwards;
+        opacity: 1 !important;
+        visibility: visible !important;
       }
     </style>
 
@@ -656,15 +703,35 @@
         <!-- Navbar End -->
 
         <!-- Carousel Start -->
-        <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div
+          class="container-fluid p-0 wow fadeIn"
+          data-wow-delay="0.1s"
+          style="margin-top: -100px; min-height: 100vh; position: relative"
+        >
           <div
             id="header-carousel"
             class="carousel slide carousel-fade"
             data-bs-ride="carousel"
-            data-bs-interval="6000"
+            data-bs-interval="5000"
+            style="height: 100vh"
           >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
+            <div class="carousel-inner" style="height: 100%">
+              <div
+                class="carousel-item active"
+                data-bs-interval="4000"
+                style="height: 100%"
+              >
+                <video
+                  class="w-100"
+                  autoplay
+                  muted
+                  playsinline
+                  style="object-fit: cover; height: 100vh"
+                >
+                  <source src="img/Video/small.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="carousel-item" style="height: 100%">
                 <img
                   loading="lazy"
                   width="1920"
@@ -672,25 +739,20 @@
                   class="w-100"
                   src="img/slider-1.webp"
                   alt="GREENSPACESS Agriculture Land"
+                  style="height: 100%; object-fit: cover"
                 />
                 <div class="carousel-caption">
                   <div class="container">
                     <div class="row justify-content-center">
                       <div class="col-12 text-center">
-                        <img
-                          loading="lazy"
-                          src="img/LOGO/Greenspacess_PNG Logo.png"
-                          alt="GREENSPACESS"
-                          class="hero-logo"
-                        />
                         <h1
-                          class="display-1 text-white mb-5 animated slideInDown"
-                          style="text-transform: capitalize"
+                          class="display-1 text-white mb-5 carousel-text-animate"
+                          style="text-transform: capitalize; margin-top: 150px"
                         >
                           Live Where You Love
                         </h1>
                         <a
-                          href="contact.html"
+                          href="project.html"
                           class="button"
                           style="--clr: #348e38"
                         >
@@ -727,7 +789,7 @@
                   </div>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" style="height: 100%">
                 <img
                   loading="lazy"
                   width="1920"
@@ -735,24 +797,20 @@
                   class="w-100"
                   src="img/slider-2.webp"
                   alt="GREENSPACESS Farmhouse Plots"
+                  style="height: 100%; object-fit: cover"
                 />
                 <div class="carousel-caption">
                   <div class="container">
                     <div class="row justify-content-center">
                       <div class="col-12 text-center">
-                        <img
-                          loading="lazy"
-                          src="img/LOGO/Greenspacess_PNG Logo.png"
-                          alt="GREENSPACESS"
-                          class="hero-logo"
-                        />
                         <h1
-                          class="display-1 text-white mb-5 animated slideInDown"
+                          class="display-1 text-white mb-5 carousel-text-animate"
+                          style="margin-top: 150px"
                         >
                           Clear-Title Agriculture Land & Farmhouse Plots
                         </h1>
                         <a
-                          href="contact.html"
+                          href="project.html"
                           class="button"
                           style="--clr: #348e38"
                         >
@@ -789,7 +847,7 @@
                   </div>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" style="height: 100%">
                 <img
                   loading="lazy"
                   width="1920"
@@ -797,23 +855,20 @@
                   class="w-100"
                   src="img/slider-3.webp"
                   alt="GREENSPACESS Lake Touch Properties"
+                  style="height: 100%; object-fit: cover"
                 />
                 <div class="carousel-caption">
                   <div class="container">
                     <div class="row justify-content-center">
                       <div class="col-12 text-center">
-                        <img
-                          src="img/LOGO/Greenspacess_PNG Logo.png"
-                          alt="GREENSPACESS"
-                          class="hero-logo"
-                        />
                         <h1
-                          class="display-1 text-white mb-5 animated slideInDown"
+                          class="display-1 text-white mb-5 carousel-text-animate"
+                          style="margin-top: 150px"
                         >
                           Prime Locations in Parinche & Koliye
                         </h1>
                         <a
-                          href="contact.html"
+                          href="project.html"
                           class="button"
                           style="--clr: #348e38"
                         >
@@ -880,7 +935,10 @@
         <!-- Carousel End -->
 
         <!-- Top Feature Start -->
-        <div class="container-fluid top-feature py-5 pt-lg-0">
+        <div
+          class="container-fluid top-feature py-5 pt-lg-0"
+          style="margin-top: 0 !important; position: relative; z-index: 10"
+        >
           <div class="container py-5 pt-lg-0">
             <div class="row gx-0">
               <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
@@ -999,7 +1057,7 @@
                   agriculture land and farmhouse real estate projects, we have
                   built a reputation for trust, transparency, and affordability.
                 </p>
-                <a href="contact.html" class="button" style="--clr: #348e38">
+                <a href="project.html" class="button" style="--clr: #348e38">
                   <span class="button__icon-wrapper">
                     <svg
                       viewBox="0 0 14 15"
@@ -1140,7 +1198,7 @@
                   excellent connectivity while offering a serene and green
                   living environment.
                 </p>
-                <a href="contact.html" class="button" style="--clr: #348e38">
+                <a href="project.html" class="button" style="--clr: #348e38">
                   <span class="button__icon-wrapper">
                     <svg
                       viewBox="0 0 14 15"
@@ -1226,7 +1284,7 @@
         <!-- Features End -->
 
         <!-- Service Start -->
-        <div class="container-xxl py-5">
+        <div class="container-xxl py-5" style="padding-bottom: 8rem !important">
           <div class="container">
             <div
               class="text-center mx-auto wow fadeInUp"
@@ -1259,9 +1317,39 @@
                       prime locations with excellent connectivity and fertile
                       soil.
                     </p>
-                    <a class="btn btn-sm btn-primary" href="contact.html"
-                      >Know More</a
+                    <a
+                      href="contact.html"
+                      class="button"
+                      style="--clr: #348e38"
                     >
+                      <span class="button__icon-wrapper">
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg"
+                          width="10"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          width="10"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg button__icon-svg--copy"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </span>
+                      Know More
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1284,9 +1372,39 @@
                       Ready-to-build farmhouse plots in serene locations,
                       perfect for your weekend getaway or permanent residence.
                     </p>
-                    <a class="btn btn-sm btn-primary" href="contact.html"
-                      >Know More</a
+                    <a
+                      href="contact.html"
+                      class="button"
+                      style="--clr: #348e38"
                     >
+                      <span class="button__icon-wrapper">
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg"
+                          width="10"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          width="10"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg button__icon-svg--copy"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </span>
+                      Know More
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1309,9 +1427,39 @@
                       Exclusive lake-touch land parcels offering scenic views
                       and a peaceful environment for your dream property.
                     </p>
-                    <a class="btn btn-sm btn-primary" href="contact.html"
-                      >Know More</a
+                    <a
+                      href="contact.html"
+                      class="button"
+                      style="--clr: #348e38"
                     >
+                      <span class="button__icon-wrapper">
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg"
+                          width="10"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          width="10"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg button__icon-svg--copy"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </span>
+                      Know More
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1334,9 +1482,39 @@
                       Complete legal documentation and verification services
                       ensuring transparent and hassle-free property ownership.
                     </p>
-                    <a class="btn btn-sm btn-primary" href="contact.html"
-                      >Know More</a
+                    <a
+                      href="contact.html"
+                      class="button"
+                      style="--clr: #348e38"
                     >
+                      <span class="button__icon-wrapper">
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg"
+                          width="10"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          width="10"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg button__icon-svg--copy"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </span>
+                      Know More
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1359,9 +1537,39 @@
                       Expert guidance on profitable land investments with
                       detailed market analysis and future growth potential.
                     </p>
-                    <a class="btn btn-sm btn-primary" href="contact.html"
-                      >Know More</a
+                    <a
+                      href="contact.html"
+                      class="button"
+                      style="--clr: #348e38"
                     >
+                      <span class="button__icon-wrapper">
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg"
+                          width="10"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          width="10"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg button__icon-svg--copy"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </span>
+                      Know More
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1385,9 +1593,39 @@
                       infrastructure planning and sustainable development
                       solutions.
                     </p>
-                    <a class="btn btn-sm btn-primary" href="contact.html"
-                      >Know More</a
+                    <a
+                      href="contact.html"
+                      class="button"
+                      style="--clr: #348e38"
                     >
+                      <span class="button__icon-wrapper">
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg"
+                          width="10"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                        <svg
+                          viewBox="0 0 14 15"
+                          fill="none"
+                          width="10"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="button__icon-svg button__icon-svg--copy"
+                        >
+                          <path
+                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                            fill="currentColor"
+                          ></path>
+                        </svg>
+                      </span>
+                      Know More
+                    </a>
                   </div>
                 </div>
               </div>
@@ -2083,16 +2321,64 @@
                   <i class="fa fa-envelope me-3"></i>greennspacess@gmail.com
                 </p>
                 <div class="d-flex gap-2 pt-3">
-                  <a class="btn btn-primary rounded-circle footer-social-icon" href="https://wa.me/917972258038" target="_blank" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                  <a
+                    class="btn btn-primary rounded-circle footer-social-icon"
+                    href="https://wa.me/917972258038"
+                    target="_blank"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      transition: transform 0.3s ease;
+                    "
+                  >
                     <i class="fab fa-whatsapp"></i>
                   </a>
-                  <a class="btn btn-primary rounded-circle footer-social-icon" href="https://www.facebook.com/greenspacess" target="_blank" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                  <a
+                    class="btn btn-primary rounded-circle footer-social-icon"
+                    href="https://www.facebook.com/greenspacess"
+                    target="_blank"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      transition: transform 0.3s ease;
+                    "
+                  >
                     <i class="fab fa-facebook-f"></i>
                   </a>
-                  <a class="btn btn-primary rounded-circle footer-social-icon" href="https://youtube.com/@greenspacess?si=P3d9GFSPGGCNbOlE" target="_blank" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                  <a
+                    class="btn btn-primary rounded-circle footer-social-icon"
+                    href="https://youtube.com/@greenspacess?si=P3d9GFSPGGCNbOlE"
+                    target="_blank"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      transition: transform 0.3s ease;
+                    "
+                  >
                     <i class="fab fa-youtube"></i>
                   </a>
-                  <a class="btn btn-primary rounded-circle footer-social-icon" href="https://www.instagram.com/greenspacess_land?igsh=MWpzb2E4ejFlcDMxbQ==" target="_blank" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                  <a
+                    class="btn btn-primary rounded-circle footer-social-icon"
+                    href="https://www.instagram.com/greenspacess_land?igsh=MWpzb2E4ejFlcDMxbQ=="
+                    target="_blank"
+                    style="
+                      width: 40px;
+                      height: 40px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      transition: transform 0.3s ease;
+                    "
+                  >
                     <i class="fab fa-instagram"></i>
                   </a>
                 </div>
@@ -2104,19 +2390,25 @@
               </div>
               <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Our Services</h4>
-                <a class="btn btn-link" href="">Agriculture Land</a>
-                <a class="btn btn-link" href="">Farmhouse Plots</a>
-                <a class="btn btn-link" href="">Lake Touch Properties</a>
-                <a class="btn btn-link" href="">Legal Verification</a>
-                <a class="btn btn-link" href="">Investment Consultation</a>
+                <a class="btn btn-link" href="service.html">Agriculture Land</a>
+                <a class="btn btn-link" href="service.html">Farmhouse Plots</a>
+                <a class="btn btn-link" href="service.html"
+                  >Lake Touch Properties</a
+                >
+                <a class="btn btn-link" href="service.html"
+                  >Legal Verification</a
+                >
+                <a class="btn btn-link" href="service.html"
+                  >Investment Consultation</a
+                >
               </div>
               <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
+                <a class="btn btn-link" href="about.html">About Us</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="service.html">Our Services</a>
+                <a class="btn btn-link" href="project.html">Our Projects</a>
+                <a class="btn btn-link" href="contact.html">Support</a>
               </div>
             </div>
           </div>
@@ -2176,6 +2468,9 @@
 
         <!-- Dropdown Toggle Script -->
         <script src="js/dropdown.js"></script>
+
+        <!-- Video Carousel Handler -->
+        <script src="js/video-carousel.js"></script>
       </div>
       <!-- data-barba="container" -->
     </div>
@@ -2189,7 +2484,7 @@
 
     <!-- Barba.js Initialization -->
     <script src="js/barba-init.js"></script>
-    
+
     <!-- Dock Component -->
     <script src="js/dock.js"></script>
   </body>
