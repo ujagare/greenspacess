@@ -12,6 +12,13 @@
             $("#spinner").removeClass("show");
           }
         });
+      } else {
+        // No video loader, hide spinner immediately
+        setTimeout(function () {
+          if ($("#spinner").length > 0) {
+            $("#spinner").removeClass("show");
+          }
+        }, 100);
       }
     };
     spinner();
