@@ -2,43 +2,52 @@
   "use strict";
 
   // Main initialization function
-  window.initMainScripts = function() {
-    // Spinner
+  window.initMainScripts = function () {
+    // Video Loader
     var spinner = function () {
-      setTimeout(function () {
-        if ($("#spinner").length > 0) {
-          $("#spinner").removeClass("show");
-        }
-      }, 1);
+      const loaderVideo = document.getElementById('loaderVideo');
+      if (loaderVideo) {
+        loaderVideo.addEventListener('ended', function() {
+          if ($("#spinner").length > 0) {
+            $("#spinner").removeClass("show");
+          }
+        });
+      }
     };
     spinner();
 
     // Initiate the wowjs
-    if (typeof WOW !== 'undefined') {
+    if (typeof WOW !== "undefined") {
       new WOW().init();
     }
 
     // Sticky Navbar
-    $(window).off('scroll.navbar').on('scroll.navbar', function () {
-      if ($(this).scrollTop() > 300) {
-        $(".sticky-top").addClass("shadow-sm").css("top", "0px");
-      } else {
-        $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
-      }
-    });
+    $(window)
+      .off("scroll.navbar")
+      .on("scroll.navbar", function () {
+        if ($(this).scrollTop() > 300) {
+          $(".sticky-top").addClass("shadow-sm").css("top", "0px");
+        } else {
+          $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
+        }
+      });
 
     // Back to top button
-    $(window).off('scroll.backtotop').on('scroll.backtotop', function () {
-      if ($(this).scrollTop() > 300) {
-        $(".back-to-top").fadeIn("slow");
-      } else {
-        $(".back-to-top").fadeOut("slow");
-      }
-    });
-    $(".back-to-top").off('click').on('click', function () {
-      $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
-      return false;
-    });
+    $(window)
+      .off("scroll.backtotop")
+      .on("scroll.backtotop", function () {
+        if ($(this).scrollTop() > 300) {
+          $(".back-to-top").fadeIn("slow");
+        } else {
+          $(".back-to-top").fadeOut("slow");
+        }
+      });
+    $(".back-to-top")
+      .off("click")
+      .on("click", function () {
+        $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+        return false;
+      });
 
     // Facts counter
     if ($.fn.counterUp) {
@@ -54,11 +63,13 @@
         itemSelector: ".portfolio-item",
         layoutMode: "fitRows",
       });
-      $("#portfolio-flters li").off('click').on("click", function () {
-        $("#portfolio-flters li").removeClass("active");
-        $(this).addClass("active");
-        portfolioIsotope.isotope({ filter: $(this).data("filter") });
-      });
+      $("#portfolio-flters li")
+        .off("click")
+        .on("click", function () {
+          $("#portfolio-flters li").removeClass("active");
+          $(this).addClass("active");
+          portfolioIsotope.isotope({ filter: $(this).data("filter") });
+        });
     }
 
     // Testimonials carousel
@@ -117,5 +128,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-
