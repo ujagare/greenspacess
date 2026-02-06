@@ -1,0 +1,434 @@
+<!-- 
+  ============================================
+  GREENSPACESS - Page Speed Optimization
+  ============================================
+  
+  Add these optimizations to improve page load speed
+  Target: 90+ PageSpeed score
+  
+  IMPLEMENTATION PRIORITY:
+  1. Critical CSS (High Impact)
+  2. Lazy Loading Images (High Impact)
+  3. Defer JavaScript (Medium Impact)
+  4. Preconnect to External Domains (Medium Impact)
+  5. Browser Caching (Low Impact - Server side)
+-->
+
+<!-- ========================================
+     1. PRECONNECT TO EXTERNAL DOMAINS
+     ======================================== -->
+<!-- Add these in <head> section BEFORE other external resources -->
+
+<!-- Preconnect to Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="preconnect" href="https://unpkg.com" />
+
+<!-- Preconnect to Google Analytics -->
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://www.google-analytics.com" />
+
+<!-- ========================================
+     2. OPTIMIZE CSS LOADING
+     ======================================== -->
+<!-- Load critical CSS inline, defer non-critical CSS -->
+
+<!-- Option A: Inline Critical CSS (Recommended) -->
+<style>
+  /* Critical CSS - Above the fold content only */
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  .navbar {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  /* Add more critical styles here */
+</style>
+
+<!-- Defer non-critical CSS -->
+<link
+  rel="preload"
+  href="css/bootstrap.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript><link rel="stylesheet" href="css/bootstrap.min.css" /></noscript>
+
+<link
+  rel="preload"
+  href="css/style.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript><link rel="stylesheet" href="css/style.css" /></noscript>
+
+<!-- ========================================
+     3. OPTIMIZE JAVASCRIPT LOADING
+     ======================================== -->
+<!-- Defer non-critical JavaScript -->
+
+<!-- jQuery - Defer -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+
+<!-- Bootstrap Bundle - Defer -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+  defer
+></script>
+
+<!-- Other Libraries - Defer -->
+<script src="lib/wow/wow.min.js" defer></script>
+<script src="lib/easing/easing.min.js" defer></script>
+<script src="lib/waypoints/waypoints.min.js" defer></script>
+<script src="lib/owlcarousel/owl.carousel.min.js" defer></script>
+<script src="lib/counterup/counterup.min.js" defer></script>
+<script src="lib/parallax/parallax.min.js" defer></script>
+<script src="lib/lightbox/js/lightbox.min.js" defer></script>
+
+<!-- Main JS - Defer -->
+<script src="js/main.js" defer></script>
+
+<!-- ========================================
+     4. LAZY LOADING IMAGES
+     ======================================== -->
+<!-- Add loading="lazy" to all images below the fold -->
+
+<!-- Example: Regular Image -->
+<img
+  src="img/about.jpg"
+  alt="About GREENSPACESS"
+  loading="lazy"
+  width="600"
+  height="400"
+/>
+
+<!-- Example: Background Images (use Intersection Observer) -->
+<div class="lazy-bg" data-bg="img/hero-bg.jpg">
+  <!-- Content -->
+</div>
+
+<script>
+  // Lazy load background images
+  document.addEventListener("DOMContentLoaded", function () {
+    const lazyBgs = document.querySelectorAll(".lazy-bg");
+
+    if ("IntersectionObserver" in window) {
+      const bgObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const lazyBg = entry.target;
+            lazyBg.style.backgroundImage = "url(" + lazyBg.dataset.bg + ")";
+            lazyBg.classList.remove("lazy-bg");
+            bgObserver.unobserve(lazyBg);
+          }
+        });
+      });
+
+      lazyBgs.forEach(function (lazyBg) {
+        bgObserver.observe(lazyBg);
+      });
+    } else {
+      // Fallback for older browsers
+      lazyBgs.forEach(function (lazyBg) {
+        lazyBg.style.backgroundImage = "url(" + lazyBg.dataset.bg + ")";
+      });
+    }
+  });
+</script>
+
+<!-- ========================================
+     5. OPTIMIZE FONTS
+     ======================================== -->
+<!-- Use font-display: swap to prevent invisible text -->
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Or use preload for critical fonts -->
+<link
+  rel="preload"
+  href="fonts/poppins.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
+<!-- ========================================
+     6. MINIFY AND COMPRESS
+     ======================================== -->
+<!-- 
+  Use online tools to minify:
+  - CSS: https://cssminifier.com/
+  - JavaScript: https://javascript-minifier.com/
+  - HTML: https://www.willpeavy.com/tools/minifier/
+  
+  Enable GZIP compression on server (see .htaccess below)
+-->
+
+<!-- ========================================
+     7. OPTIMIZE IMAGES
+     ======================================== -->
+<!-- 
+  Before uploading images:
+  1. Resize to actual display size
+  2. Compress using:
+     - TinyPNG: https://tinypng.com/
+     - Squoosh: https://squoosh.app/
+  3. Use WebP format when possible
+  4. Add width and height attributes
+-->
+
+<!-- Example: Responsive Image with WebP -->
+<picture>
+  <source srcset="img/hero.webp" type="image/webp" />
+  <source srcset="img/hero.jpg" type="image/jpeg" />
+  <img
+    src="img/hero.jpg"
+    alt="Hero Image"
+    loading="lazy"
+    width="1920"
+    height="1080"
+  />
+</picture>
+
+<!-- ========================================
+     8. REDUCE RENDER-BLOCKING RESOURCES
+     ======================================== -->
+<!-- Move non-critical CSS to bottom or use media queries -->
+
+<!-- Load print styles separately -->
+<link rel="stylesheet" href="css/print.css" media="print" />
+
+<!-- Load animation CSS only when needed -->
+<link
+  rel="stylesheet"
+  href="lib/animate/animate.min.css"
+  media="(prefers-reduced-motion: no-preference)"
+/>
+
+<!-- ========================================
+     9. ENABLE BROWSER CACHING
+     ======================================== -->
+<!-- 
+  Create .htaccess file in root directory with:
+  (This is for Apache servers)
+-->
+
+<!--
+# .htaccess content:
+
+# Enable GZIP Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  
+  # Fonts
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  
+  # HTML
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Leverage Browser Caching
+<IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+</IfModule>
+-->
+
+<!-- ========================================
+     10. REMOVE UNUSED CSS/JS
+     ======================================== -->
+<!-- 
+  Use Chrome DevTools Coverage tool:
+  1. Open DevTools (F12)
+  2. Press Ctrl+Shift+P
+  3. Type "Coverage"
+  4. Click "Start instrumenting coverage"
+  5. Reload page
+  6. See unused CSS/JS in red
+  7. Remove or defer unused code
+-->
+
+<!-- ========================================
+     11. OPTIMIZE THIRD-PARTY SCRIPTS
+     ======================================== -->
+<!-- Load third-party scripts asynchronously -->
+
+<!-- Google Analytics - Async -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-4JK2286LK2"
+></script>
+
+<!-- Social Media Widgets - Defer -->
+<script defer src="https://platform.twitter.com/widgets.js"></script>
+<script defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+<!-- ========================================
+     12. REDUCE DOM SIZE
+     ======================================== -->
+<!-- 
+  Keep DOM nodes under 1500
+  - Remove unnecessary divs
+  - Simplify HTML structure
+  - Use CSS instead of extra markup
+-->
+
+<!-- ========================================
+     COMPLETE OPTIMIZED <head> EXAMPLE
+     ======================================== -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GREENSPACESS - Agriculture Land</title>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Critical CSS inline -->
+    <style>
+      /* Critical above-the-fold CSS here */
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .navbar {
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/bootstrap.min.css" as="style" />
+    <link rel="preload" href="css/style.css" as="style" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      as="style"
+    />
+
+    <!-- Defer non-critical CSS -->
+    <link
+      rel="stylesheet"
+      href="css/bootstrap.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- Fonts with display swap -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description here" />
+
+    <!-- Google Analytics - Async -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4JK2286LK2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4JK2286LK2");
+    </script>
+  </head>
+  <body>
+    <!-- Your content here -->
+
+    <!-- Defer all JavaScript to bottom -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
+
+<!-- ========================================
+     TESTING YOUR OPTIMIZATIONS
+     ======================================== -->
+<!-- 
+  Test your page speed with:
+  
+  1. Google PageSpeed Insights
+     https://pagespeed.web.dev/
+     Target: 90+ score
+  
+  2. GTmetrix
+     https://gtmetrix.com/
+     Target: A grade
+  
+  3. WebPageTest
+     https://www.webpagetest.org/
+     Target: <3s load time
+  
+  4. Chrome DevTools Lighthouse
+     F12 > Lighthouse tab
+     Target: 90+ performance score
+-->
+
+<!-- ========================================
+     QUICK WINS CHECKLIST
+     ======================================== -->
+<!-- 
+  ✅ Add loading="lazy" to all images below fold
+  ✅ Add defer to all JavaScript files
+  ✅ Compress all images (TinyPNG)
+  ✅ Enable GZIP compression (.htaccess)
+  ✅ Add preconnect to external domains
+  ✅ Use font-display: swap for fonts
+  ✅ Minify CSS and JavaScript
+  ✅ Remove unused CSS/JS
+  ✅ Enable browser caching
+  ✅ Optimize third-party scripts
+-->

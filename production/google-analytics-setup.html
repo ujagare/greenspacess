@@ -1,0 +1,95 @@
+<!-- 
+  GOOGLE ANALYTICS 4 (GA4) SETUP INSTRUCTIONS
+  ===========================================
+  
+  Step 1: Create Google Analytics Account
+  - Go to: https://analytics.google.com/
+  - Sign in with Google account
+  - Click "Start measuring"
+  - Enter Account name: "GREENSPACESS"
+  - Configure data sharing settings
+  
+  Step 2: Set up Property
+  - Property name: "GREENSPACESS Website"
+  - Time zone: India (GMT+5:30)
+  - Currency: Indian Rupee (INR)
+  
+  Step 3: Set up Data Stream
+  - Choose "Web"
+  - Website URL: https://www.greenspacess.com
+  - Stream name: "GREENSPACESS Main Site"
+  
+  Step 4: Get Measurement ID
+  - Copy your Measurement ID (Format: G-4JK2286LK2)
+  - Replace 'G-4JK2286LK2' in the code below
+  
+  Step 5: Add this code to ALL pages
+  - Paste BEFORE closing </head> tag
+  - On every HTML page
+-->
+
+<!-- Google tag (gtag.js) - Replace G-4JK2286LK2 with your actual Measurement ID -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-4JK2286LK2"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-4JK2286LK2", {
+    page_title: document.title,
+    page_location: window.location.href,
+    page_path: window.location.pathname,
+  });
+
+  // Track button clicks
+  document.addEventListener("DOMContentLoaded", function () {
+    // Track "Schedule Site Visit" buttons
+    document.querySelectorAll('a[href*="contact"]').forEach(function (button) {
+      button.addEventListener("click", function () {
+        gtag("event", "click", {
+          event_category: "Button",
+          event_label: "Schedule Site Visit",
+          value: 1,
+        });
+      });
+    });
+
+    // Track phone number clicks
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+      link.addEventListener("click", function () {
+        gtag("event", "click", {
+          event_category: "Contact",
+          event_label: "Phone Call",
+          value: 1,
+        });
+      });
+    });
+
+    // Track email clicks
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
+      link.addEventListener("click", function () {
+        gtag("event", "click", {
+          event_category: "Contact",
+          event_label: "Email",
+          value: 1,
+        });
+      });
+    });
+  });
+</script>
+
+<!-- 
+  IMPORTANT EVENTS TO TRACK:
+  - Page views (automatic)
+  - Button clicks (configured above)
+  - Form submissions
+  - Phone calls
+  - Email clicks
+  - Project page visits
+  - Contact form submissions
+-->

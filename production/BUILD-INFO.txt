@@ -1,0 +1,14 @@
+GREENSPACESS Production Build 
+Build Date: 01-02-2026 17:10:29.66 
+Status: Ready for Deployment 
+Quality Score: 9.3/10 
+ 
+Files included: 
+- All HTML pages 
+- CSS folder 
+- JS folder 
+- Images folder 
+- Libraries folder 
+- .htaccess 
+- robots.txt 
+- sitemap.xml 

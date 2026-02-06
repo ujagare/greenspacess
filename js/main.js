@@ -3,6 +3,13 @@
 
   // Main initialization function
   window.initMainScripts = function () {
+    const getScrollTop = function () {
+      if (window.locomotiveScroll && window.locomotiveScroll.scroll) {
+        return window.locomotiveScroll.scroll.instance.scroll.y;
+      }
+      return $(window).scrollTop();
+    };
+
     // Video Loader
     var spinner = function () {
       const loaderVideo = document.getElementById('loaderVideo');
@@ -29,32 +36,55 @@
     }
 
     // Sticky Navbar
+    const updateStickyNavbar = function () {
+      if (getScrollTop() > 300) {
+          $(".sticky-top").addClass("shadow-sm").css("top", "0px");
+      } else {
+          $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
+      }
+    };
+
     $(window)
       .off("scroll.navbar")
-      .on("scroll.navbar", function () {
-        if ($(this).scrollTop() > 300) {
-          $(".sticky-top").addClass("shadow-sm").css("top", "0px");
-        } else {
-          $(".sticky-top").removeClass("shadow-sm").css("top", "-100px");
-        }
-      });
+      .on("scroll.navbar", updateStickyNavbar);
 
     // Back to top button
+    const updateBackToTop = function () {
+      if (getScrollTop() > 300) {
+          $(".back-to-top").fadeIn("slow");
+      } else {
+          $(".back-to-top").fadeOut("slow");
+      }
+    };
+
     $(window)
       .off("scroll.backtotop")
-      .on("scroll.backtotop", function () {
-        if ($(this).scrollTop() > 300) {
-          $(".back-to-top").fadeIn("slow");
-        } else {
-          $(".back-to-top").fadeOut("slow");
-        }
-      });
+      .on("scroll.backtotop", updateBackToTop);
     $(".back-to-top")
       .off("click")
       .on("click", function () {
-        $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+        if (window.locomotiveScroll) {
+          window.locomotiveScroll.scrollTo(0, {
+            duration: 1500,
+            easing: [0.25, 0.0, 0.35, 1.0],
+          });
+        } else {
+          $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+        }
         return false;
       });
+
+    // Keep legacy scroll listeners working with Locomotive Scroll
+    if (window.locomotiveScroll) {
+      window.locomotiveScroll.on("scroll", function () {
+        updateStickyNavbar();
+        updateBackToTop();
+      });
+    }
+
+    // Run once on init
+    updateStickyNavbar();
+    updateBackToTop();
 
     // Facts counter
     if ($.fn.counterUp) {

@@ -12,14 +12,14 @@
         j.async = true;
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
+      })(window, document, "script", "dataLayer", "GTM-TMB443F7");
     </script>
     <!-- End Google Tag Manager -->
 
     <!-- Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+      src="https://www.googletagmanager.com/gtag/js?id=G-4JK2286LK2"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -27,7 +27,7 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
+      gtag("config", "G-4JK2286LK2");
     </script>
     <!-- End Google Analytics -->
 
@@ -171,8 +171,7 @@
     <noscript><link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" /></noscript>
     <link href="lib/lightbox/css/lightbox.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" /></noscript>
-
-    <!-- Customized Bootstrap Stylesheet -->
+<!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
@@ -236,14 +235,8 @@
       }
     </style>
 
-    <!-- Smooth Scroll Styles -->
+    <!-- Custom scrollbar -->
     <style>
-      /* Enable smooth scrolling */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 10px;
       }
@@ -608,10 +601,6 @@
         content: '';
       }
     </style>
-    
-    <!-- Locomotive Scroll CSS - Deferred -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"></noscript>
   </head>
 
   <body>
@@ -621,31 +610,13 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TMB443F7"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div>
-      <!-- Video Loader Start -->
-      <div
-        id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-        style="z-index: 9999;"
-      >
-        <video
-          autoplay
-          muted
-          playsinline
-          style="width: 100%; height: 100%; object-fit: cover;"
-          id="loaderVideo"
-        >
-          <source src="img/Video/small.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <!-- Video Loader End -->
 
       <!-- Navbar Start -->
       <nav class="navbar navbar-expand-lg sticky-top p-0">
@@ -664,6 +635,7 @@
           class="navbar-toggler me-4"
           data-bs-toggle="collapse"
           data-bs-target="#navbarCollapse"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -1678,6 +1650,7 @@
                           required
                           minlength="2"
                           maxlength="50"
+                          pattern="[A-Za-z\s.'-]+"
                         />
                         <label for="name">Your Name</label>
                         <div class="invalid-feedback">
@@ -2307,7 +2280,7 @@
                 <a
                   class="btn btn-primary rounded-circle footer-social-icon"
                   href="https://wa.me/917972258038"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   style="
                     width: 40px;
                     height: 40px;
@@ -2322,7 +2295,7 @@
                 <a
                   class="btn btn-primary rounded-circle footer-social-icon"
                   href="https://www.facebook.com/greenspacess"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   style="
                     width: 40px;
                     height: 40px;
@@ -2337,7 +2310,7 @@
                 <a
                   class="btn btn-primary rounded-circle footer-social-icon"
                   href="https://youtube.com/@greenspacess?si=P3d9GFSPGGCNbOlE"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   style="
                     width: 40px;
                     height: 40px;
@@ -2352,7 +2325,7 @@
                 <a
                   class="btn btn-primary rounded-circle footer-social-icon"
                   href="https://www.instagram.com/greenspacess_land?igsh=MWpzb2E4ejFlcDMxbQ=="
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   style="
                     width: 40px;
                     height: 40px;
@@ -2405,7 +2378,7 @@
             </div>
             <div class="col-md-6 text-center text-md-end">
               Design and Developed by
-              <a class="border-bottom" href="https://codesunny.in"
+              <a class="border-bottom" href="https://codesunny.in" target="_blank" rel="noopener noreferrer"
                 >codesunny.in</a
               >
             </div>
@@ -2425,8 +2398,6 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-      <!-- Lenis Smooth Scroll - REMOVED -->
-      <!-- <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> -->
 
       <!-- GSAP Animation Library -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -2437,22 +2408,14 @@
       <script src="lib/waypoints/waypoints.min.js"></script>
       <script src="lib/owlcarousel/owl.carousel.min.js"></script>
       <script src="lib/counterup/counterup.min.js"></script>
-      <!-- Parallax disabled - conflicts with Lenis smooth scroll -->
-      <!-- <script src="lib/parallax/parallax.min.js"></script> -->
       <script src="lib/isotope/isotope.pkgd.min.js"></script>
       <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-      <!-- Lenis removed - using GSAP ScrollSmoother instead -->
 
       <!-- Template Javascript -->
       <script src="js/main.js"></script>
 
       <!-- GSAP Scroll Animations -->
       <script src="js/scroll-animations.js"></script>
-
-      <!-- Contact Form Handler -->
-      <script src="js/contact-form.js"></script>
-      <script src="js/home-contact-form.js"></script>
 
       <!-- Lazy Loading Script -->
       <script src="js/lazy-load.js"></script>
@@ -2462,11 +2425,15 @@
 
       <!-- Video Carousel Handler -->
       <script src="js/video-carousel.js"></script>
-    </div>
 
-    <!-- GSAP - Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
+      <!-- Supabase Client -->
+      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      
+      <!-- Supabase Database Handler (Load BEFORE other form handlers) -->
+      <script src="js/supabase-handler.js"></script>
+      
+      <!-- Contact Form Handler -->
+      <script src="js/contact-form.js"></script>
     <!-- Dock Component -->
     <script src="js/dock.js"></script>
     
@@ -2486,3 +2453,12 @@
     </script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+

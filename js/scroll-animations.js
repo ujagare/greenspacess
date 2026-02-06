@@ -37,6 +37,8 @@
 
     // 1. Fade In animations for sections
     gsap.utils.toArray(".wow").forEach((element) => {
+      // Keep top-feature boxes visible after initial reveal
+      if (element.closest(".top-feature")) return;
       gsap.from(element, {
         scrollTrigger: {
           trigger: element,
@@ -75,7 +77,7 @@
         scrollTrigger: {
           trigger: feature,
           start: "top 85%",
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none none",
         },
         opacity: 0,
         x: index === 0 ? -50 : index === 1 ? 0 : 50,

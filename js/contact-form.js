@@ -121,7 +121,7 @@
     }
 
     // Handle form submission
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       formMessage.classList.add("d-none");
@@ -134,6 +134,26 @@
       submitBtn.disabled = true;
       btnText.classList.add("d-none");
       spinner.classList.remove("d-none");
+
+      // Collect form data for Supabase
+      const formData = {
+        name: form.querySelector('[name="name"]').value,
+        email: form.querySelector('[name="email"]').value,
+        phone: form.querySelector('[name="phone"]').value,
+        service: form.querySelector('[name="interest"]')?.value || form.querySelector('[name="subject"]')?.value || null,
+        message: form.querySelector('[name="message"]')?.value || null,
+        source_page: 'contact'
+      };
+
+      // Save to Supabase if available
+      if (typeof saveToSupabase === 'function') {
+        const supabaseResult = await saveToSupabase(formData);
+        if (supabaseResult.success) {
+          console.log('✅ Form data saved to database');
+        } else {
+          console.error('⚠️ Failed to save to database:', supabaseResult.error);
+        }
+      }
 
       // Create hidden iframe
       const iframe = document.createElement('iframe');

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team - GREENSPACESS</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f8f9fa;
+        padding: 40px 20px;
+      }
+
+      .team-section {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: #0f4229;
+        margin-bottom: 10px;
+      }
+
+      .section-title p {
+        font-size: 1.1rem;
+        color: #666;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .team-card {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .team-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        transform: translateY(-5px);
+      }
+
+      .team-image {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        background: #e9ecef;
+      }
+
+      .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .team-content {
+        text-align: center;
+      }
+
+      .team-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #0f4229;
+        margin-bottom: 8px;
+      }
+
+      .team-role {
+        font-size: 0.95rem;
+        color: #348e38;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .team-bio {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding-top: 15px;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: #0f4229;
+      }
+
+      .social-link:hover {
+        background: #348e38;
+        color: white;
+        transform: scale(1.1);
+      }
+
+      .social-link i {
+        font-size: 18px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .team-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .team-image {
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="team-section">
+      <div class="section-title">
+        <h2>Meet Our Team</h2>
+        <p>Dedicated professionals committed to your land investment success</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-card">
+          <div class="team-image">
+            <img src="img/home-about-img-01.jpg" alt="Rajesh Kumar" />
+          </div>
+          <div class="team-content">
+            <h3 class="team-name">Rajesh Kumar</h3>
+            <p class="team-role">Founder & CEO</p>
+            <p class="team-bio">
+              With over 15 years of experience in real estate and agriculture
+              land development, Rajesh leads our team with vision and expertise
+              in creating value for our clients.
+            </p>
+            <div class="team-social">
+              <a
+                href="mailto:rajesh@greenspacess.com"
+                class="social-link"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a
+                href="tel:+917972258038"
+                class="social-link"
+                aria-label="Phone"
+              >
+                <i class="fas fa-phone"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card">
+          <div class="team-image">
+            <img src="img/blub.webp" alt="Priya Sharma" />
+          </div>
+          <div class="team-content">
+            <h3 class="team-name">Priya Sharma</h3>
+            <p class="team-role">Legal & Documentation Head</p>
+            <p class="team-bio">
+              Priya ensures all our land transactions are legally verified and
+              transparent. Her expertise in property law guarantees clear title
+              and hassle-free documentation.
+            </p>
+            <div class="team-social">
+              <a
+                href="mailto:priya@greenspacess.com"
+                class="social-link"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a
+                href="tel:+917666090107"
+                class="social-link"
+                aria-label="Phone"
+              >
+                <i class="fas fa-phone"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card">
+          <div class="team-image">
+            <img src="img/tractor-field-ai-generated.jpg" alt="Amit Deshmukh" />
+          </div>
+          <div class="team-content">
+            <h3 class="team-name">Amit Deshmukh</h3>
+            <p class="team-role">Project Development Manager</p>
+            <p class="team-bio">
+              Amit oversees all our land development projects, ensuring quality
+              infrastructure and timely delivery. His agricultural expertise
+              helps clients maximize their land potential.
+            </p>
+            <div class="team-social">
+              <a
+                href="mailto:amit@greenspacess.com"
+                class="social-link"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a
+                href="tel:+917972258038"
+                class="social-link"
+                aria-label="Phone"
+              >
+                <i class="fas fa-phone"></i>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
